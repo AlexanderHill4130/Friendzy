@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_18_105338) do
+ActiveRecord::Schema.define(version: 2019_06_18_121852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 2019_06_18_105338) do
     t.index ["user_id"], name: "index_availabilities_on_user_id"
   end
 
+  create_table "event_groups", force: :cascade do |t|
+    t.bigint "place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["place_id"], name: "index_event_groups_on_place_id"
+  end
+
   create_table "friendships", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "friend_id"
@@ -31,6 +38,48 @@ ActiveRecord::Schema.define(version: 2019_06_18_105338) do
     t.datetime "updated_at", null: false
     t.index ["friend_id"], name: "index_friendships_on_friend_id"
     t.index ["user_id"], name: "index_friendships_on_user_id"
+  end
+
+  create_table "interests", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "participants", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "event_group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_group_id"], name: "index_participants_on_event_group_id"
+    t.index ["user_id"], name: "index_participants_on_user_id"
+  end
+
+  create_table "place_categories", force: :cascade do |t|
+    t.bigint "place_id"
+    t.bigint "interest_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["interest_id"], name: "index_place_categories_on_interest_id"
+    t.index ["place_id"], name: "index_place_categories_on_place_id"
+  end
+
+  create_table "places", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.string "address"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_interests", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "interest_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["interest_id"], name: "index_user_interests_on_interest_id"
+    t.index ["user_id"], name: "index_user_interests_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,4 +97,11 @@ ActiveRecord::Schema.define(version: 2019_06_18_105338) do
   end
 
   add_foreign_key "availabilities", "users"
+  add_foreign_key "event_groups", "places"
+  add_foreign_key "participants", "event_groups"
+  add_foreign_key "participants", "users"
+  add_foreign_key "place_categories", "interests"
+  add_foreign_key "place_categories", "places"
+  add_foreign_key "user_interests", "interests"
+  add_foreign_key "user_interests", "users"
 end
