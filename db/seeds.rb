@@ -8,8 +8,8 @@
 require 'faker'
 require_relative '../app/services/foursquare_api.rb'
 
+
 # puts RES
-raw_res = RES.first.last
 
 puts 'Cleaning Dabatase...'
 UserInterest.destroy_all
@@ -22,6 +22,13 @@ User.destroy_all
 
 
 puts 'Creating 20 fake users...'
+  u1 = User.new(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: "user@example.com",
+    password: "123456"
+  )
+  u1.save!
 20.times do
   user = User.new(
     first_name: Faker::Name.first_name,
@@ -56,22 +63,23 @@ end
 puts 'Finished!'
 
 puts 'Creating 20 real places in Milan...'
-raw_res.each_with_index do |r, i|
-  break if i > 19
-  categories = r.categories.first
-  place = Place.new(
-      name: r.name,
-      category: categories ? categories.shortName : 'Undefined',
-      address:  if r.location.address.present?
-                  "#{r.location.address}, #{r.location.country}"
-                else
-                  r.location.country
-                end,
-      rating: rand(1..5)
+search_api("Milan", "party")
+# raw_res.each_with_index do |r, i|
+#   break if i > 19
+#   categories = r.categories.first
+#   place = Place.new(
+#       name: r.name,
+#       category: categories ? categories.shortName : 'Undefined',
+#       address:  if r.location.address.present?
+#                   "#{r.location.address}, #{r.location.country}"
+#                 else
+#                   r.location.country
+#                 end,
+#       rating: rand(1..5)
 
-  )
-  place.save!
-end
+#   )
+#   place.save!
+# end
 puts 'Finished!'
 
 puts 'Creating 20 fake place_categories...'
