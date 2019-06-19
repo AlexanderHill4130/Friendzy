@@ -12,6 +12,7 @@ require_relative '../app/services/foursquare_api.rb'
 raw_res = RES.first.last
 
 puts 'Cleaning Dabatase...'
+UserInterest.destroy_all
 Availability.destroy_all
 Friendship.destroy_all
 PlaceCategory.destroy_all
