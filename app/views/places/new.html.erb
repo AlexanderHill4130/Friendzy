@@ -1,0 +1,15 @@
+<%= form_for @place do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :category %>:
+  <%= f.text_field :category %><br />
+
+  <%= f.label :address %>:
+  <%= f.text_field :address %><br />
+
+  <%= f.label :rating %>:
+  <%= f.text_field :rating %><br />
+
+  <%= f.submit %>
+  <% end %>
