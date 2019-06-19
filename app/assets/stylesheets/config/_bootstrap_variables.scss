@@ -9,6 +9,10 @@ $headings-font-family:    $headers-font;
 $body-bg:                 $light-gray;
 $font-size-base: 1rem;
 
+// Color Scheme (Friendzy)
+$brand-color: linear-gradient(180deg, rgba(11,185,187,0) 0%, #FFFFFF 0.01%, #0BB9BB 100%);
+
+
 // Colors
 $body-color: $gray;
 $primary:    $blue;
@@ -16,6 +20,7 @@ $success:    $green;
 $info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
+$friendzy: linear-gradient(180deg, rgba(11,185,187,0) 0%, #FFFFFF 0.01%, #0BB9BB 100%);
 
 // Buttons & inputs' radius
 $border-radius:    2px;
