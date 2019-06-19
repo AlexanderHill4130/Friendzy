@@ -1,0 +1,19 @@
+<h1>Editing Place</h1>
+
+<%= form_for @place do |f| %>
+  <%= f.text_field :name %><br />
+
+  <%= f.label :category %>:
+  <%= f.text_field :category %><br />
+
+  <%= f.label :address %>:
+  <%= f.text_field :address %><br />
+
+  <%= f.label :rating %>:
+  <%= f.text_field :rating %><br />
+
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Show', @place %> |
+<%= link_to 'Back', places_path %>

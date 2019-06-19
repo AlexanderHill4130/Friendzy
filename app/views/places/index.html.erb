@@ -1,0 +1,26 @@
+<!-- <h1>Places List</h1> -->
+<div class="container-places mt-5">
+
+
+
+
+<% @places.each do |place| %>
+
+<%= link_to place_path(place) do %>
+
+  <div class="card-event">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="rounded">
+    <div class="card-event-infos">
+      <div class="card-event-header">
+        <h6>16/02/2019</h6>
+        <h6><%= place.name %></h6>
+      </div>
+      <div class="card-event-details">
+        <p>Fred and Ethel may be interested</p>
+      </div>
+    </div>
+
+  </div>
+  <% end %>
+<% end %>
+</div>

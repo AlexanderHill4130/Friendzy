@@ -1,0 +1,7 @@
+<h2>Venue</h2>
+
+<p>
+  <%= @place.name %>: <%= @place.category %>: <%= @place.address %>
+  <%= link_to 'Edit', edit_place_path(@place) %> |
+  <%= link_to 'Back', places_path %>
+</p>
