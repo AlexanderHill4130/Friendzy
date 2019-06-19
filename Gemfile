@@ -16,6 +16,11 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'pg_search'
+gem 'faker'
+gem 'pry', '~> 0.12.2'
+gem 'opencage-geocoder'
+gem 'awesome_print'
+gem 'foursquare2'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
