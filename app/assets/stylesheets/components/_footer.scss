@@ -1,0 +1,44 @@
+.mobile-bottom-bar {
+  width: 100%;
+  height: 3.778rem;
+  background: #13aabf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+
+
+  .footer-link {
+    flex: 1 1 auto;
+    text-align: center;
+    color: $friendzy;
+    text-transform: uppercase;
+    font-size: rem-calc(13);
+    font-weight: bold;
+    padding: 0.907rem 1rem;
+  }
+
+    i.fa {
+      opacity: 0.8;
+      margin-right: rem-calc(10);
+      font-size: rem-calc(24);
+      vertical-align: middle;
+    }
+
+    &:focus,
+    &:active {
+      color: $friendzy;
+    }
+  }
+
+  .footer-text {
+    position: relative;
+    text-align: center;
+    top: 2px;
+    font-weight: bold;
+    font-size: rem-calc(14);
+    color: $friendzy;
+}
+
+

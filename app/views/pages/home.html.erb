@@ -1,6 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div container-home>
+  <%= link_to places_path do %>
+  <div class="card-home">
+    <h1><i class="fas fa-star" style="color: #45718b"></i></h1>
+    <h1><span class='footer-text' style="color: #45718b">Places</span></h1>
+  </div>
+  <% end %>
 
-<p><%= link_to "Places", places_path %></p>
-
-<p><%= link_to "Friends", users_path %></p>
+<%= link_to users_path do %>
+  <div class="card-home">
+    <h1><i class="fas fa-users" style="color: #45718b"></i></h1>
+    <h1><span class='footer-text' style="color: #45718b">Friends</span></h1>
+  </div>
+  <% end %>
+</div>
