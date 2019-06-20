@@ -1,5 +1,4 @@
-
-
+// PLACES INDEX PAGE
 .container-places {
   align-items: center;
   flex-grow: 0;
@@ -14,7 +13,9 @@
   width: 305px;
   height: 170px;
   margin: 0 auto;
-
+ // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+ box-shadow: 0px 0px 5px 0px;
+ box-shadow:#3498db;
   // overflow: hidden;
   background: linear-gradient(180deg, rgba(11,185,187,0) 0%, #FFFFFF 0.01%, #0BB9BB 100%);
   border-radius: 4px;
@@ -24,7 +25,7 @@
     height: 135px;
     width: 165px;
     object-fit: cover;
-
+    padding-left: 5px;
   }
 }
 
@@ -61,8 +62,60 @@
 }
 
 
-/* MEDIA QUERIES */
+//  SHOW PLACES PAGE
+.card-show-places-container {
+  align-items: center;
+  flex-grow: 0;
+  display: flex;
+  background: $brand-color;
+  padding-top: 20px;
+  margin-top: 80px;
+}
 
+.card-show-places {
+  /*change this bg color to $friendzy*/
+  overflow: hidden;
+  background: $brand-color;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-show-places > img {
+  display: block;
+  margin: 20px auto auto auto;
+  // padding-top: 20px;
+  height: 200px;
+  width: 80%;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-show-places h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: #43738B;
+  text-shadow: 1px 1px rgb(198,198,198);
+}
+
+.card-show-places p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-show-places .card-show-places-infos {
+  padding: 20px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+
+
+/* MEDIA QUERIES */
+// Actually not using this as demo is for mobiles.
 @media (min-width: 1281px) {
 .container-places {
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -74,7 +127,6 @@
   grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
 
 @media (min-width: 768px) and (max-width: 1024px) {
 .container-places {
@@ -89,12 +141,11 @@
   }
 }
 
-
 @media (min-width: 320px) and (max-width: 767px) {
   .container-places {
     grid-template-columns: 1fr;
-
   }
+
 }
 
 // firends card
