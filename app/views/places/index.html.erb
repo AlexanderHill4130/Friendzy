@@ -24,7 +24,7 @@
     <div class="card-event-infos">
       <div class="card-event-header">
         <h6>16/02/2019</h6>
-        <h6><%= place.name %></h6>
+        <h6><%= truncate(place.name, length:10) %></h6>
         <p><%= place.category %></p>
         <p><%= place.address %></p>
       </div>

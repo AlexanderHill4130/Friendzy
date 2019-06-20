@@ -1,0 +1,23 @@
+<%= @user.first_name %>
+<% if @user.interests.any? %>
+<%= @user.interests %>
+<% else %>
+<%= "has not specified any interest yet." %>
+<% end %>
+<div>
+  <%= link_to "< Back", root_path %>
+</div>
+<div>
+Specify your interests:
+<%= simple_form_for [@user, @user_interest] do |f| %>
+   <div>
+   <p>
+    <%= f.association :interest, as: :check_boxes, label: false %>
+  </p>
+  </div>
+  <p>
+    <input type="submit" name="commit" value="save" data-disable-with="save">
+  </p>
+<% end %>
+<h2><%#= link_to :cancel, page_path(@user) %></h2>
+</div>
