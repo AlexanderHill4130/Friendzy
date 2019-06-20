@@ -6,13 +6,22 @@ class UserInterestsController < ApplicationController
   end
 
   def create
-    @user_interest = @user.user_interests.new(user_interest_params)
 
-    if @user_interest.save
-      redirect_to page_path(@user)
-    else
-      render 'pages/show'
+    current_user.interests.destroy_all
+    #@user_interest = @user.user_interests.new(user_interest_params)
+    array_interest = params["interests"]["interest"]
+
+    array_interest.delete("")
+
+    array_interest.each do |int|
+      @user_interest = UserInterest.new(user: current_user, interest_id: int.to_i )
+      @user_interest.save
     end
+
+
+
+      redirect_to page_path(@user)
+
   end
 
   def destroy
