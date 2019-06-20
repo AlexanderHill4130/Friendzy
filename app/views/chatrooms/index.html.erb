@@ -1,7 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Chatrooms</h1>
+<div class="fluid-container">
+  <div class="row">
+    <div class="col-sm-2">
+      <% if user_signed_in? %>
+        <h5>Chatrooms</h5>
+        <ul>
+          <% current_user.chatrooms.each do |chatroom| %>
+          <li><%= link_to chatroom.name, '#' %> </li>
+          <% end %>
+        </ul>
+      <% end %>
 
+<!--  -->
 <table>
   <thead>
     <tr>
@@ -13,14 +25,19 @@
   <tbody>
     <% @chatrooms.each do |chatroom| %>
       <tr>
-        <td><%= chatroom.name %></td>
+        <td><%= chatroom.name %> </td>
         <td><%= link_to 'Show', chatroom %></td>
         <td><%= link_to 'Edit', edit_chatroom_path(chatroom) %></td>
         <td><%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Join', chatroom_chatroom_users_path(chatroom), method: :post %></td>
+        <td><%= link_to 'Leave', chatroom_chatroom_users_path(chatroom), method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+  </div>
+  </div>
+</div>
 
 <br>
 
