@@ -24,9 +24,9 @@
     <div class="card-event-infos">
       <div class="card-event-header">
         <h6>16/02/2019</h6>
-        <h6><%= place.name %></h6>
-        <p><%= place.category %></p>
-        <p><%= place.address %></p>
+        <h6><%= truncate(place.name, length:10) %></h6>
+        <input type="hidden" <%= place.category %> >
+        <input type="hidden"<%= place.address %> >
       </div>
       <div class="card-event-details">
         <p>Fred and Ethel may be interested</p>
