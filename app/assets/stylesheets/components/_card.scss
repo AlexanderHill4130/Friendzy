@@ -63,7 +63,7 @@
   display: flex;
   background: $brand-color;
   padding-top: 20px;
-  margin-top: 3rem;
+  margin-top: 80px;
 }
 
 .card-show-places {
@@ -75,18 +75,21 @@
 
 .card-show-places > img {
   display: block;
-  margin: auto;
-  padding-top: 20px;
+  margin: 20px auto auto auto;
+  // padding-top: 20px;
   height: 200px;
   width: 80%;
   object-fit: cover;
   border-radius: 4px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .card-show-places h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: #43738B;
+  text-shadow: 1px 1px rgb(198,198,198);
 }
 
 .card-show-places p {
