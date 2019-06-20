@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :user_interests
   has_many :interests, through: :user_interests
   has_many :chatroom_users
-  has_many :chatrooms
+  has_many :chatrooms, through: :chatroom_users
   has_many :messages
 
   include PgSearch
