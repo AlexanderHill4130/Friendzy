@@ -11,9 +11,8 @@
   width: 305px;
   height: 170px;
   margin: 0 auto;
-
   // overflow: hidden;
-  background: linear-gradient(180deg, rgba(11,185,187,0) 0%, #FFFFFF 0.01%, #0BB9BB 100%);
+  background: $friendzy;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -54,6 +53,34 @@
   color: black;
 }
 
+.card-home {
+  background-size: cover;
+  background-position: center;
+  width: 305px;
+  height: 180px;
+  display: flex;
+  flex: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: $friendzy;
+  margin: 0 auto;
+  grid-gap: 16px;
+  margin-bottom: 10px;
+}
+
+.container-home {
+  align-items: center;
+  flex-grow: 0;
+  display: grid;
+  grid-gap: 16px;
+  background: white;
+  padding-top: 20px;
+}
 
 /* MEDIA QUERIES */
 
