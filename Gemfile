@@ -24,6 +24,7 @@ gem 'pry', '~> 0.12.2'
 gem 'opencage-geocoder'
 gem 'awesome_print'
 gem 'foursquare2'
+gem "simple_calendar", "~> 2.0"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
