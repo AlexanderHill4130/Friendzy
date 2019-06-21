@@ -5,4 +5,5 @@ class Interest < ApplicationRecord
   has_many :places, through: :place_categories
 
   validates :name, presence: true
+
 end

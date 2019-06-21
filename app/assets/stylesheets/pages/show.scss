@@ -1,0 +1,26 @@
+
+.form-interest {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+.form-check {
+    display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+.list-group-item {
+    display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+.save-button {
+  display: flex;
+  justify-content: space-around;
+
+}
+.save-button p input{
+padding-right: 40px;
+padding-left: 40px;
+
+}

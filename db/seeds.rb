@@ -27,7 +27,9 @@ puts 'Creating 20 fake users...'
     last_name: Faker::Name.last_name,
     email: "user@example.com",
     password: "123456"
+
   )
+  u1.remote_photo_url = "http://www.columbiaphotography.co.uk/wp-content/uploads/2018/04/dating-photography-photo.jpg"
   u1.save!
 20.times do
   user = User.new(
@@ -36,6 +38,7 @@ puts 'Creating 20 fake users...'
     email: Faker::Internet.email,
     password: "123456"
   )
+  user.remote_photo_url = "https://cdnph.upi.com/svc/sv/upi/4471540569821/2018/1/2de329ab899b74f121206977f3c640c8/Vox-Lux-Natalie-Portman-plays-pop-star-in-first-trailer.jpg"
   user.save!
 end
 
@@ -104,10 +107,10 @@ puts 'Finished!'
 
 puts 'Creating 20 fake user_interests...'
 20.times do
-  pcat = PlaceCategory.new(
-    place: Place.all.sample,
+  uint = UserInterest.new(
+    user: User.all.sample,
     interest: Interest.all.sample,
   )
-  pcat.save!
+  uint.save!
 end
 puts 'Finished!'

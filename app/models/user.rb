@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :chatroom_users
   has_many :chatrooms, through: :chatroom_users
   has_many :messages
+  mount_uploader :photo, PhotoUploader
 
   include PgSearch
   pg_search_scope :search_by_first_name_and_last_name,

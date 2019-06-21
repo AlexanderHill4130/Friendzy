@@ -1,0 +1,49 @@
+<div>
+<strong><%=@friend.first_name.upcase %> <%= @friend.last_name.upcase  %></strong>
+</div>
+
+<% if @friend.interests.any? %>
+<em> Interested in: </em>
+<% @friend.interests.each do |int| %>
+  <ul>
+    <li><%= int.name %></li>
+  </ul>
+ <% end %>
+<% else %>
+  <% if @user == @friend %>
+  <em>You don't have interests yet.</em>
+  <div>
+  <%= link_to "Add an interest",new_user_user_interest_path(current_user), :class => "btn btn-outline-primary"  %>
+  </div>
+  <% else %>
+  <%= @friend.first_name %><%= " doesn't have any interest yet." %>
+  <% end %>
+<% end %>
+
+
+  <% if @friend_av.any? %>
+<div class="bg-light">
+  <p> <%= week_calendar events: @friend_av do |date, avs| %>
+    <%= date %>
+
+    <% avs.each do |av| %>
+      <div class="text-center">
+        <%= "☑" %>
+      </div>
+    <% end %>
+  <% end %>
+</p>
+</div>
+  <% else %>
+  <%= @friend.first_name %> has not specified availabilities yet.
+  <% end %>
+
+
+
+
+<h2><%#= link_to :cancel, page_path(@user) %></h2>
+</div>
+<div>
+  <%= link_to "< Back", users_path%>
+</div>
+
