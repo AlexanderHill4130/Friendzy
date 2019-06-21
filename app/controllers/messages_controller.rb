@@ -7,7 +7,6 @@ class MessagesController < ApplicationController
     message.user = current_user
 
     message.save
-    redirect_to @chatroom
   end
 
 

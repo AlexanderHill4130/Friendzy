@@ -1,12 +1,17 @@
-// const logChatInput = () => {
+const logChatInput = () => {
 
-//   const chat_input = document.querySelector('.form-control');
+  const submitBtn = document.querySelector('.submit-btn');
+  const chatInput = document.querySelector('.form-control');
 
-//   chat_input.addEventListener('keyup', e => {
-//     if (e && e.keyCode == 13) {
+  submitBtn.addEventListener('click', e => {
+    // console.log("clicked");
+    // e.preventDefault();
+    // console.log(chatInput.value);
+    // // chatInput.value
+    // document.getElementById("new_message").submit();
 
-//     }
-//   });
-// }
 
-// export { logChatInput };
+  });
+}
+
+export { logChatInput };
