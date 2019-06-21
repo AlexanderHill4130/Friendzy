@@ -10,6 +10,8 @@ class PagesController < ApplicationController
     @friend = User.find(params[:id])
     @friend_av = Availability.where(user: @friend)
     @user_av = Availability.where(user: @user)
+
+    @footer = true
   end
   def new
   @user = current_user
