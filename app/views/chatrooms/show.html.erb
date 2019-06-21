@@ -9,8 +9,8 @@
   </p>
   </div>
   <div data-behavior='messages'>
-    <% @chatroom.messages.limit(30).each do |message| %>
-    <div><strong><%= message.user.first_name%> <%= message.user.last_name[0].upcase %>: </strong>  <%= message.body %></div>
+    <% @messages.each do |message| %>
+    <div><strong><%= message.user.username_initial%>: </strong>  <%= message.body %></div>
     <% end %>
   </div>
 
