@@ -1,1 +1,12 @@
 // Specific CSS for your home-page
+ul {
+  &.hello{
+    display: table;
+    width: 100%;
+    text-align: center;
+
+    > li {
+      display: table-cell;
+    }
+  }
+}
