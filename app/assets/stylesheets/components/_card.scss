@@ -65,7 +65,8 @@
   background-size: cover;
   background-position: center;
   width: 305px;
-  height: 180px;
+  height: 320px;
+  text-align: center;
   display: flex;
   flex: grid;
   justify-content: center;
@@ -73,12 +74,21 @@
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  border-radius: 3px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  background: $friendzy;
+  background: white;
   margin: 0 auto;
   grid-gap: 16px;
   margin-bottom: 10px;
+}
+
+.card-home p {
+  text-align: center;
+}
+
+.footer-text {
+  display: flex;
+  vertical-align: center;
 }
 
 .container-home {
@@ -88,6 +98,7 @@
   grid-gap: 16px;
   background: white;
   padding-top: 20px;
+  text-align: center;
 }
 
 //  SHOW PLACES PAGE
