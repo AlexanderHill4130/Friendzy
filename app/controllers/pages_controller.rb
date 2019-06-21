@@ -7,5 +7,6 @@ class PagesController < ApplicationController
   def show
     @user = current_user
     @user_interest = UserInterest.new
+
   end
 end
