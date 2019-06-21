@@ -104,10 +104,10 @@ puts 'Finished!'
 
 puts 'Creating 20 fake user_interests...'
 20.times do
-  pcat = PlaceCategory.new(
-    place: Place.all.sample,
+  uint = UserInterest.new(
+    user: User.all.sample,
     interest: Interest.all.sample,
   )
-  pcat.save!
+  uint.save!
 end
 puts 'Finished!'
