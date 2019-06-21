@@ -1,33 +1,36 @@
 
 <%= link_to "Home", root_path %>
 
+
+<div class="center-form">
+  <%= image_tag 'app_logo.png', class: 'logo' %>
+
 <%= form_tag users_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
-    placeholder: "Find friends"
+    placeholder: "Type to search"
   %>
 <% end %>
 
 <div class="container">
-  <div class="row">
     <div class="col-xs-8">
       <div id="friends">
+        <div class="row">
+
+      <div class="col-sm-12">
+
+      </div>
         <% if params[:query].present? %>
         <% sql_query = "first_name ILIKE :query OR last_name ILIKE :query" %>
         <% @users = User.where(sql_query, query: "%#{params[:query]}%") %>
-        <% @users.each do |user| %>
-          <h4><%= user.first_name + " " + user.last_name %></h4>
-          <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
-          <% end %>
+
+        <%= render @users %>
       <% else %>
         <% @users = User.all %>
-        <% @users.each do |user| %>
-          <h4><%= user.first_name + " " + user.last_name %></h4>
-          <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
+        <%= render @users %>
         <% end %>
-        <% end %>
-      </div>
     </div>
   </div>
+</div>
 </div>
