@@ -8,7 +8,7 @@
         <h5>Chatrooms</h5>
         <ul>
           <% current_user.chatrooms.each do |chatroom| %>
-          <li><%= link_to chatroom.name, '#' %> </li>
+          <li><%= link_to chatroom.name, chatroom %> </li>
           <% end %>
         </ul>
       <% end %>

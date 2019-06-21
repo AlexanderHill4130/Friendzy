@@ -15,4 +15,8 @@ class User < ApplicationRecord
   pg_search_scope :search_by_first_name_and_last_name,
                   against: %i[first_name last_name],
                   using: { tsearch: { prefix: true } }
+
+  def username
+    "#{first_name} #{last_name}"
+  end
 end

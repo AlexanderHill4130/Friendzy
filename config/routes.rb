@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :places
   resources :chatrooms do
     resource :chatroom_users
+    resources :messages
   end
 end

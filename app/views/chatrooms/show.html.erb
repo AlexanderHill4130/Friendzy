@@ -1,9 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="fluid-container col-sm-10 col-sm-offset-2" style="margin-bottom: 70px;">
+  <p id="notice"><%= notice %></p>
+  <%= link_to 'Edit', edit_chatroom_path(@chatroom) %> |
+  <%= link_to 'Back', chatrooms_path %>
+  <div class="navbar navbar-default navbar-fixed-top pt-5">
+  <p>
+    <strong>Name:</strong>
+    <%= @chatroom.name %>
+  </p>
+  </div>
+  <div data-behavior='messages'>
+    <% @chatroom.messages.limit(30).each do |message| %>
+    <div><strong><%= message.user.first_name%> <%= message.user.last_name[0].upcase %>: </strong>  <%= message.body %></div>
+    <% end %>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @chatroom.name %>
-</p>
+  <%= simple_form_for [@chatroom, Message.new] do |f| %>
+    <%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
+    <%= f.button :submit, class: "submit-btn" %>
+  <% end %>
 
-<%= link_to 'Edit', edit_chatroom_path(@chatroom) %> |
-<%= link_to 'Back', chatrooms_path %>
+
+
+</div>
