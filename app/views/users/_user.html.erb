@@ -3,7 +3,8 @@
     <img src="https://www.infrascan.net/demo/assets/img/avatar5.png" class="img-circle" width="50px">
   </div>
   <div class="card-friend-name">
-    <p><%= "#{user.first_name} #{user.last_name}" %></p>
+    <p><%= "#{user.first_name}" %></p>
+    <p><%= "#{user.last_name}" %></p>
   </div>
   <div class="card-friend-button">
     <%= link_to "Hang out", friendships_path(:friend_id => user), :method => :post %>
