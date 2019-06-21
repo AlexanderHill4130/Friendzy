@@ -6,6 +6,7 @@
     <p><%= "#{user.first_name} #{user.last_name}" %></p>
   </div>
   <div class="card-friend-button">
-    <%= link_to "Hang out", friendships_path(:friend_id => user), :method => :post %>
+<!--     <%= link_to "Hang out", friendships_path(:friend_id => user), :method => :post %>  -->
+<%= link_to "Hang out", chatrooms_path %>
   </div>
 </div>
