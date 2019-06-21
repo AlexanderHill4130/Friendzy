@@ -7,6 +7,11 @@ class PagesController < ApplicationController
   def show
     @user = current_user
     @user_interest = UserInterest.new
-
+    @friend = User.find(params[:id])
   end
+  def new
+  @user = current_user
+  @user_interest = UserInterest.new
+  end
+
 end
