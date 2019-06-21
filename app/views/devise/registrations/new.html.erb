@@ -1,5 +1,5 @@
 <div class="center-form">
-  <%= image_tag 'app_logo.png', class: 'logo' %>
+  <%= image_tag 'app_logo.png', :size => "280x90" %>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -26,8 +26,9 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
 
-  <div class="form-actions">
+  <div class="sign-in-button">
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>
+<%= render "devise/shared/links" %>
 </div>
