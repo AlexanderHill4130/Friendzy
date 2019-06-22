@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Chatrooms</h1>
+<h1>  Chatrooms</h1>
 <div class="fluid-container">
   <div class="row">
     <div class="col-sm-2">
       <% if user_signed_in? %>
-        <h5>Chatrooms</h5>
+        <h5>Joined Chatrooms</h5>
         <ul>
           <% current_user.chatrooms.each do |chatroom| %>
           <li><%= link_to chatroom.name, chatroom %> </li>
@@ -17,7 +17,7 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Chatroom List</th>
       <th colspan="3"></th>
     </tr>
   </thead>
