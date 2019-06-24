@@ -1,5 +1,6 @@
 class UserInterestsController < ApplicationController
- before_action :set_interest, only: %i[new create destroy]
+  before_action :set_interest, only: %i[new create destroy]
+  before_action :authenticate_user!
 
   def new
     @user_interest = UserInterest.new

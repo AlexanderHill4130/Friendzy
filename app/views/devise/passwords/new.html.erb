@@ -1,5 +1,13 @@
+<div class="devise-body">
+
+
+
+<div center-form-parent>
 <div class="center-form">
-<h2>Forgot your password?</h2>
+
+<%= image_tag 'app_logo.png', :size => "242x80" %>
+
+<h4>Forgot your password?</h4>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
@@ -8,15 +16,19 @@
     <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" } %>
+                label: false,
+                input_html: { autocomplete: "email" },
+                placeholder: 'Email' %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
+  <div class="submit-form-button">
+    <%= f.button :submit, "Reset password" %>
   </div>
 <% end %>
 
-<div class="shared-links">
-  <%= render "devise/shared/links" %>
+  <div class="shared-links">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
 </div>
 </div>
