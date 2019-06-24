@@ -1,34 +1,48 @@
 <div class="center-form">
-  <%= image_tag 'app_logo.png', :size => "280x90" %>
+  <%= image_tag 'app_logo.png', :size => "242x80" %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <h4>Sign Up</h4>
+
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
     <%= f.input :first_name,
                 required: true,
-                autofocus: true
+                label: false,
+                autofocus: true,
+                placeholder: 'First Name'
                 %>
     <%= f.input :last_name,
                 required: true,
-                autofocus: true
+                label: false,
+                autofocus: true,
+                placeholder: 'Last Name'
                 %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
+                label: false,
+                input_html: { autocomplete: "email" },
+                placeholder: 'Email' %>
     <%= f.input :password,
                 required: true,
+                label: false,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password" },
+                placeholder: 'New Password' %>
     <%= f.input :password_confirmation,
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
+                label: false,
+                input_html: { autocomplete: "new-password" },
+                placeholder: 'Confirm Password' %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
 
-  <div class="sign-in-button">
-    <%= f.button :submit, "Sign up" %>
+  <div class="submit-form-button">
+    <%= f.button :submit, "Meet Your Friends" %>
   </div>
+
 <% end %>
+
 <%= render "devise/shared/links" %>
 </div>

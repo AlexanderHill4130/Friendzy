@@ -1,18 +1,28 @@
 <div class="center-form">
+  <%= image_tag 'app_logo.png', :size => "242x80" %>
+
+  <h4>Log In</h4>
+
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <div class="form-inputs">
+    <%= f.input :email,
+                required: false,
+                label: false,
+                autofocus: true,
+                input_html: { autocomplete: "email" },
+                placeholder: 'Email'  %>
+    <%= f.input :password,
+                required: false,
+                label:false,
+                input_html: { autocomplete: "current-password" },
+                placeholder: 'Password' %>
+  </div>
 
 
-    <%= image_tag 'app_logo.png', :size => "280x90" %>
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <%= f.input :email,
-                    required: false,
-                    label: false,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" } %>
-        <%= f.input :password,
-                    required: false,
-                    label:false,
-                    input_html: { autocomplete: "current-password" } %>
-        <%= f.submit 'Log in', class: 'myButton' %>
+      <div class="submit-form-button">
+        <%= f.button :submit, "Meet Your Friends" %>
+     </div>
 
     <% end %>
 

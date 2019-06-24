@@ -2,10 +2,9 @@ require_relative "../services/foursquare_api.rb"
 
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: :index
+  before_action :authenticate_user!
 
   def index
-
     if params[:query].present?
       search_api("Milan",params[:query])
 
