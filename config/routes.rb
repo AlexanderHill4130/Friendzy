@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :places do
     resources :chatrooms do
       get "/add_participant/:id", to: 'chatrooms#add_participant', as: "add_participant"
+      delete "/remove_participant/:id", to: 'chatrooms#remove_participant', as: "remove_participant"
       resource :chatroom_users
       resources :messages
     end

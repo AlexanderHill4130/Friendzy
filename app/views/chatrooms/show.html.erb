@@ -21,9 +21,14 @@
 
   <div>
     user in chat:
-    <% @chatroom.users.each do |user| %>
-    <%= user.first_name %>
+    <ul>
+      <% @chatroom.users.each do |user| %>
+      <li>
+        <%= user.first_name %>
+        <%= link_to "Remove", place_chatroom_remove_participant_path(@chatroom.place, @chatroom, user.id), method: :delete %>
+      </li>
     <% end %>
+    </ul>
   </div>
   <div>
     list of friends available:

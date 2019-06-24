@@ -81,6 +81,12 @@ class ChatroomsController < ApplicationController
     redirect_to place_chatroom_path(@chatroom.place, @chatroom)
   end
 
+  def remove_participant
+    @chatroom = Chatroom.find(params[:chatroom_id])
+    @chatroom.chatroom_users.where(user_id: params[:id]).first.destroy
+    redirect_to place_chatroom_path(@chatroom.place, @chatroom)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_chatroom
