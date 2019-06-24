@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_21_100835) do
+ActiveRecord::Schema.define(version: 2019_06_24_112023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,13 +39,6 @@ ActiveRecord::Schema.define(version: 2019_06_21_100835) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "event_groups", force: :cascade do |t|
-    t.bigint "place_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["place_id"], name: "index_event_groups_on_place_id"
-  end
-
   create_table "friendships", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "friend_id"
@@ -69,15 +62,6 @@ ActiveRecord::Schema.define(version: 2019_06_21_100835) do
     t.datetime "updated_at", null: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
-  create_table "participants", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "event_group_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["event_group_id"], name: "index_participants_on_event_group_id"
-    t.index ["user_id"], name: "index_participants_on_user_id"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -134,11 +118,8 @@ ActiveRecord::Schema.define(version: 2019_06_21_100835) do
   add_foreign_key "availabilities", "users"
   add_foreign_key "chatroom_users", "chatrooms"
   add_foreign_key "chatroom_users", "users"
-  add_foreign_key "event_groups", "places"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "participants", "event_groups"
-  add_foreign_key "participants", "users"
   add_foreign_key "place_categories", "interests"
   add_foreign_key "place_categories", "places"
   add_foreign_key "user_interests", "interests"
