@@ -17,6 +17,8 @@ UserInterest.destroy_all
 Availability.destroy_all
 Friendship.destroy_all
 PlaceCategory.destroy_all
+ChatroomUser.destroy_all
+Chatroom.destroy_all
 Place.destroy_all
 Interest.destroy_all
 User.destroy_all
