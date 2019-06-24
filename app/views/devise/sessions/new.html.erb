@@ -1,32 +1,36 @@
-<div class="center-form">
-  <%= image_tag 'app_logo.png', :size => "242x80" %>
+<div class="devise-body">
 
-  <h4>Log In</h4>
+  <div center-form-parent>
+    <div class="center-form">
+      <%= image_tag 'app_logo.png', :size => "242x80" %>
 
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <h4>Log In</h4>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                label: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" },
-                placeholder: 'Email'  %>
-    <%= f.input :password,
-                required: false,
-                label:false,
-                input_html: { autocomplete: "current-password" },
-                placeholder: 'Password' %>
-  </div>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
+      <div class="form-inputs">
+      <%= f.input :email,
+                  required: false,
+                  label: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" },
+                  placeholder: 'Email'  %>
+      <%= f.input :password,
+                  required: false,
+                  label:false,
+                  input_html: { autocomplete: "current-password" },
+                  placeholder: 'Password' %>
+      </div>
 
       <div class="submit-form-button">
         <%= f.button :submit, "Meet Your Friends" %>
-     </div>
+      </div>
 
-    <% end %>
+      <% end %>
 
-    <%= render "devise/shared/links" %>
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
+</div>
 
 

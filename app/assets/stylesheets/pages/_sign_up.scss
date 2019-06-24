@@ -22,9 +22,10 @@
   border-left-style: none;
   border-right-style: none;
   border-bottom: 1px solid #45728B;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .form-control:focus {
   outline: none;
-  border-color: #b7e6ff;
+  background-color: rgba(0, 0, 0, 0.5);
 }
