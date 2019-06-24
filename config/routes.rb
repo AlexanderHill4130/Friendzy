@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   end
   resources :friendships
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :places
-  resources :chatrooms do
-    resource :chatroom_users
-    resources :messages
+  resources :places do
+    resources :chatrooms do
+      resource :chatroom_users
+      resources :messages
+    end
   end
 end

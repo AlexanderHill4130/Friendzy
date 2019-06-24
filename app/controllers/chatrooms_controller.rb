@@ -16,7 +16,7 @@ class ChatroomsController < ApplicationController
   # GET /chatrooms/new
   def new
     @chatroom = Chatroom.new
-    @place = Place.new
+
   end
 
   # GET /chatrooms/1/edit
