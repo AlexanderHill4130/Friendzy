@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :places do
     resources :chatrooms do
+      get "/add_participant/:id", to: 'chatrooms#add_participant', as: "add_participant"
       resource :chatroom_users
       resources :messages
     end

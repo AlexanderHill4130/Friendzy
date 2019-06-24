@@ -75,6 +75,12 @@ class ChatroomsController < ApplicationController
     end
   end
 
+  def add_participant
+    @chatroom = Chatroom.find(params[:chatroom_id])
+    @chatroom.chatroom_users.create(user_id: params[:id])
+    redirect_to place_chatroom_path(@chatroom.place, @chatroom)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_chatroom
