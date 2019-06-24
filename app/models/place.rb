@@ -1,6 +1,7 @@
 class Place < ApplicationRecord
   has_many :place_categories
   has_many :interests, through: :place_categories
+  has_many :chatrooms
 
   validates :name, presence: true
   validates :category, presence: true
