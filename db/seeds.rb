@@ -1,15 +1,16 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 require_relative '../app/services/foursquare_api.rb'
-
+require 'httparty'
+require 'json'
 
 # puts RES
+def randomuser_api
+  api = "https://randomuser.me/api/"
+   response = HTTParty.get(api)
+   response["results"].first["picture"]["large"]
+end
+
+
 
 puts 'Cleaning Dabatase...'
 UserInterest.destroy_all
@@ -26,19 +27,19 @@ puts 'Creating 20 fake users...'
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: "user@example.com",
-    password: "123456"
+    password: "123456")
 
-  )
-  u1.remote_photo_url = "http://www.columbiaphotography.co.uk/wp-content/uploads/2018/04/dating-photography-photo.jpg"
-  u1.save!
-20.times do
+    u1.remote_photo_url = "http://www.columbiaphotography.co.uk/wp-content/uploads/2018/04/dating-photography-photo.jpg"
+    u1.save!
+
+  20.times do
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: "123456"
   )
-  user.remote_photo_url = "https://cdnph.upi.com/svc/sv/upi/4471540569821/2018/1/2de329ab899b74f121206977f3c640c8/Vox-Lux-Natalie-Portman-plays-pop-star-in-first-trailer.jpg"
+  user.remote_photo_url = randomuser_api
   user.save!
 end
 

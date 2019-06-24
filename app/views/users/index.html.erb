@@ -2,9 +2,6 @@
 <%= link_to "Home", root_path %>
 
 
-<div>
-  <%= image_tag 'app_logo.png', class: 'logo' %>
-
 <%= form_tag users_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
@@ -14,23 +11,17 @@
 <% end %>
 
 <div class="container">
-    <div class="col-xs-8">
-      <div id="friends">
-        <div class="row">
+    <div class="row">
+      <!-- <div id="friends"> -->
 
-      <div class="col-sm-12">
+          <% if params[:query].present? %>
+            <% sql_query = "first_name ILIKE :query OR last_name ILIKE :query" %>
+            <% @users = User.where(sql_query, query: "%#{params[:query]}%") %>
+            <%= render @users %>
+          <% else %>
+            <% @users = User.all %>
+            <%= render @users %>
+          <% end %>
 
-      </div>
-        <% if params[:query].present? %>
-        <% sql_query = "first_name ILIKE :query OR last_name ILIKE :query" %>
-        <% @users = User.where(sql_query, query: "%#{params[:query]}%") %>
-
-        <%= render @users %>
-      <% else %>
-        <% @users = User.all %>
-        <%= render @users %>
-        <% end %>
-    </div>
   </div>
-</div>
 </div>

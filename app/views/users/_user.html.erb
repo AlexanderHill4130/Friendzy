@@ -1,4 +1,4 @@
-<div class="card-friend">
+<div class="col-6 col-md-4 card-friend">
   <div>
     <%= cl_image_tag(user.photo, height: 50, width: 50, crop: :fill, class: 'card-friend-avatar')%>
   </div>
@@ -8,7 +8,6 @@
 
   </div>
   <div class="card-friend-button">
-<!--     <%= link_to "Hang out", friendships_path(:friend_id => user), :method => :post %>  -->
-<%= link_to "Hang out", chatrooms_path %>
+    <%= link_to "Hang out", chatrooms_path %>
   </div>
 </div>

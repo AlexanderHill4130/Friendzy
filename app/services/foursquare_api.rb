@@ -1,5 +1,6 @@
 
 #Api keys
+
 OPENCAGE_api_key = ENV['OPENCAGE_KEY']
 FOURSQUARE_client_id = ENV['FOURSQUARE_ID']
 FOURSQUARE_client_secret = ENV['FOURSQUARE_SECRET']
