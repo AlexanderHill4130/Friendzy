@@ -1,0 +1,35 @@
+.btn-friendzy {
+  background-color: #0BB9BB ;
+  color: white;
+  padding: 0;
+  margin-right: 13px;
+  margin-left: 5px;
+  width: 85px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+.btn-friendzy:hover {
+  background-color: white;
+  border: 1px solid #0BB9BB;
+  color: black;
+}
+
+.btn-outline-friendzy {
+  border-color: #0BB9BB;
+  background: white;
+  color: $friendzy;
+  width: 85px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+.btn-outline-ladle:hover {
+  background: #0BB9BB;
+  color: white;
+}
+
+.btn-rounding {
+  border-radius: 3px;
+}
+
