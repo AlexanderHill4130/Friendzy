@@ -2,28 +2,60 @@
   <%= cl_image_tag(@friend.photo) %>
 <strong><%=@friend.first_name.upcase %> <%= @friend.last_name.upcase  %></strong>
 </div>
-
-<% if @friend.interests.any? %>
-<div class="text-center">
+ <!-- OLD CODE FOR SHOWING INTERESTS -->
+<%# if @friend.interests.any? %>
+<!-- <div class="text-center">
 <em> Interested in: </em>
-<% @friend.interests.each do |int| %>
+ <%# @friend.interests.each do |int| %>
   <ul class="hello">
-    <li class="bg-light"><%= int.name %></li>
+    <li class="bg-light"><%#= int.name %></li>
   </ul>
- <% end %>
-<% else %>
-  <% if @user == @friend %>
+ <%# end %>
+<%# else %>
+  <%# if @user == @friend %>
   <em>You don't have interests yet.</em>
   <div >
-  <%= link_to "Add an interest",new_user_user_interest_path(current_user), :class => "btn btn-outline-primary"  %>
+  <%#= link_to "Add an interest",new_user_user_interest_path(current_user), :class => "btn btn-outline-primary"  %>
   </div>
-  <% else %>
+  <%# else %>
   <div class="bg-light p-5">
-  <%= @friend.first_name %><%= " doesn't have any interest yet." %>
+  <%= @friend.first_name %><%#= " doesn't have any interest yet." %>
   </div>
-  <% end %>
-<% end %>
+  <%# end %>
+<%# end %>
 </div>
+-->
+ <!-- OLD CODE FOR SHOWING INTERESTS -->
+ <!-- new CODE FOR SHOWING INTERESTS -->
+ <% if @user == @friend %>
+    <% if @friend.interests.any? %>
+    <% @friend.interests.each do |int| %>
+      <ul class="hello">
+        <li class="bg-light"><%= int.name %></li>
+      </ul>
+      <% end %>
+       <div >
+        <%= link_to "Add an interest",new_user_user_interest_path(current_user), :class => "btn btn-outline-primary"  %>
+       </div>
+    <% else %>
+        <em>You don't have interests yet.</em>
+        <div >
+        <%= link_to "Add an interest",new_user_user_interest_path(current_user), :class => "btn btn-outline-primary"  %>
+       </div>
+    <% end %>
+  <% else %>
+    <% if @friend.interests.any? %>
+      <% @friend.interests.each do |int| %>
+      <ul class="hello">
+        <li class="bg-light"><%= int.name %></li>
+      </ul>
+      <% end %>
+    <% else %>
+        <em><%= @friend.first_name %><%= " doesn't have any interest yet." %></em>
+    <% end %>
+  <% end %>
+
+ <!-- new CODE FOR SHOWING INTERESTS -->
 
   <% if @friend_av.any? %>
 <div class="bg-light">
