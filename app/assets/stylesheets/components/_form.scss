@@ -19,3 +19,22 @@
 .center-form-parent {
   margin-top: 15vh;
 }
+
+.search-form {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.search-form #query {
+  margin: 0 5px;
+  width: 100%;
+  margin-left: 20px;
+  padding-left: 20px;
+}
+
+.search-form-flexgrow {
+  flex-grow: 1fr;
+}
+
