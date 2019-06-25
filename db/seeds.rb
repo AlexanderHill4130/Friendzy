@@ -58,11 +58,11 @@ puts 'Creating 20 fake availabilities...'
 end
 puts 'Finished!'
 
-puts 'Creating 20 fake interests...'
 categories = %w[Movies Music Food Cooking Aquarium Library Bar Cafe Museum Casino Shopping Hospital]
-20.times do
+puts "Creating #{categories.count} fake interests..."
+categories.each do |category|
   interest = Interest.new(
-    name:    categories.sample
+    name:    category
   )
   interest.save!
 end
