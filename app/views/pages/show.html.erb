@@ -1,5 +1,5 @@
 <div class="text-center">
-  <p><%= cl_image_tag(@friend.photo) %></p>
+  <p><%= cl_image_tag((@friend.photo), class: "profile_photo") %></p>
   <p><strong><%=@friend.first_name.upcase %> <%= @friend.last_name.upcase  %></strong></p>
 </div>
  <!-- OLD CODE FOR SHOWING INTERESTS -->
