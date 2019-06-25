@@ -28,15 +28,8 @@
     <h6 class="card-subtitle mb-2 text-muted"><em><%= @place.category %></em></h6>
     <p class="card-text"><%= @place.description %></p>
   </div>
-</div>
 
-<div>
-   <ul class="list-group" style="margin-top: 1rem;">
-    <li class="list-group-item list-group-item-primary"> List of available friends:</li>
-<% User.all.each do |u| %>
-  <li class="list-group-item d-flex justify-content-between align-items-center"> <%= u.first_name %> <%= u.last_name %>
-    <span class="badge badge-friendzy badge-pill"><%= link_to "Invite", place_chatrooms_path(@place), method: :post %> </span>
-  </li>
-<% end %>
-  </ul>
+</div>
+<div class="btn btn-outline-primary w-100">
+<%= link_to "Let's go here!", place_chatrooms_path(@place), method: :post %>
 </div>
