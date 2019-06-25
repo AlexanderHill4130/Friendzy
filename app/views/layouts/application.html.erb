@@ -19,6 +19,7 @@
     <%= yield %>
     <% if current_user %>
     <%= render 'shared/footer' %>
+    <div style="height: 60px; background-color: transparent;"></div>
     <% end %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
