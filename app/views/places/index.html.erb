@@ -1,48 +1,29 @@
-<!-- <%#= link_to "Home", root_path %> -->
-<!-- <div class="container-full-width"> -->
-    <%= form_tag places_path, method: :get, class: "search-form" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control search-form-flexgrow",
-        placeholder: "Find a place to hang out"
-      %>
-      <%= button_tag(type: "submit", class: "btn btn-friendzy mr-4") do %>
-         <i class="fas fa-search"></i>
-      <% end %>
-    <% end %>
-<!-- </div> -->
+<%= form_tag places_path, method: :get, class: "search-form" do %>
+<%= text_field_tag :query,
+  params[:query],
+  class: "form-control search-form-flexgrow",
+  placeholder: "Find a place to hang out" %>
+<%= button_tag(type: "submit", class: "btn btn-friendzy mr-4") do %>
+<i class="fas fa-search"></i>
+<% end %>
+<% end %>
 
-<!-- <div class="container-places"> -->
 <div class="container-places mt-3">
   <div class="row mx-1">
-  <% @places.each do |place| %>
-  <div class="col-6 px-1 ">
-    <%= link_to place_path(place) do %>
-
-<!--       <div class="card-event">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" height="70" width="70" class="rounded ">
- -->
-
-            <!-- <h6><%#= truncate(place.name, length:10) %></h6> -->
-            <!-- <input type="hidden" <%#= place.category %> > -->
-            <!-- <input type="hidden"<%#= place.address %> > -->
-
-
-            <!-- <p>Fred and Ethel may be interested</p> -->
-
-    <div class="card m-1 text-center" style="width: 160px;">
-      <img class="card-img-top" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" height="70" width="70" alt="Card image cap">
-      <div class="card-body">
-        <h6 class="card-title"><%= truncate(place.name, length:12) %></h6>
+    <% @places.each do |place| %>
+    <div class="col-6 px-1 ">
+      <%= link_to place_path(place) do %>
+      
+      <div class="card m-1 text-center" style="width: 160px;">
+        <img class="card-img-top" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" height="70" width="70" alt="Card image cap">
+        <div class="card-body">
+          <h6 class="card-title"><%= truncate(place.name, length:12) %></h6>
           <input type="hidden" <%= place.category %> >
           <input type="hidden"<%= place.address %> >
-        <p class="card-text"></p>
+          <p class="card-text"></p>
+        </div>
       </div>
-    </div>
-
       <% end %>
     </div>
-  <!-- </div>  card-event -->
-  <% end %>
-  <!-- </div> -->
-</div>   <!-- container-places end -->
+    <% end %>
+  </div>   <!-- container-places end -->

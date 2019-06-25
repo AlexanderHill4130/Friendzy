@@ -1,27 +1,42 @@
-<div class="card-show-places-container ">
+<!-- <div class="card-show-places-container ">
   <div class="card-show-places">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
 
     <div class="card-show-places-infos">
       <div>
-        <h2><%= @place.name %></h2>
+        <%= cl_image_tag(@place.photo) %>
+        <h2><%#= @place.name %></h2>
         <p><%= @place.address %></p>
 
         <p>Category: <%= @place.category %></p>
       </div>
     </div>
-  </div>   <!--card-show-places  end -->
+  </div>  <#!--card-show-places  end -->
+
+<!-- </div>   --> <!-- card-show-places-container  end-->
 
 
+<%#= link_to "Invite Friends", place_chatrooms_path(@place), method: :post %>
 
+<div class="card" style="">
+  <%= cl_image_tag(@place.photo, :transformation=>[
+  {:width=>400, :height=>250, :gravity=>"south", :crop=>"fill"}]) %>
+  <div class="card-img-overlay">
+    <h5 class="card-title text-white"> <strong> <%= link_to "<", root_path, {:style=>'color:#FFFFFF;'} %></strong> </h5>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><em><%= @place.name %></em></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><em><%= @place.category %></em></h6>
+    <p class="card-text"><%= @place.description %></p>
+  </div>
+</div>
 
-
-
-
-
-
-</div>   <!-- card-show-places-container  end-->
-
-
-
-<%= link_to "Invite Friends", place_chatrooms_path(@place), method: :post %>
+<div>
+   <ul class="list-group" style="margin-top: 1rem;">
+    <li class="list-group-item list-group-item-primary"> List of available friends:</li>
+<% User.all.each do |u| %>
+  <li class="list-group-item d-flex justify-content-between align-items-center"> <%= u.first_name %> <%= u.last_name %>
+    <span class="badge badge-friendzy badge-pill"><%= link_to "Invite", place_chatrooms_path(@place), method: :post %> </span>
+  </li>
+<% end %>
+  </ul>
+</div>
