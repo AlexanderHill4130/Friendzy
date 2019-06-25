@@ -16,6 +16,7 @@ class ChatroomsController < ApplicationController
   # GET /chatrooms/new
   def new
     @chatroom = Chatroom.new
+
   end
 
   # GET /chatrooms/1/edit
@@ -25,17 +26,29 @@ class ChatroomsController < ApplicationController
   # POST /chatrooms
   # POST /chatrooms.json
   def create
-    @chatroom = Chatroom.new(chatroom_params)
-
-    respond_to do |format|
-      if @chatroom.save
-        format.html { redirect_to @chatroom, notice: 'Chatroom was successfully created.' }
-        format.json { render :show, status: :created, location: @chatroom }
-      else
-        format.html { render :new }
-        format.json { render json: @chatroom.errors, status: :unprocessable_entity }
+    # binding.pry
+    place = Place.find(params[:place_id])
+    place.chatrooms.each do |chatroom|
+      if chatroom.users.include?(current_user)
+        @chatroom = chatroom
+        redirect_to place_chatroom_path(place, @chatroom)
+        return
       end
     end
+
+    @chatroom = place.chatrooms.create
+    @chatroom.chatroom_users.create(user: current_user)
+    redirect_to place_chatroom_path(place, @chatroom)
+
+    # respond_to do |format|
+    #   if @chatroom.save
+    #     format.html { redirect_to @chatroom, notice: 'Chatroom was successfully created.' }
+    #     format.json { render :show, status: :created, location: @chatroom }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @chatroom.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /chatrooms/1
@@ -62,6 +75,18 @@ class ChatroomsController < ApplicationController
     end
   end
 
+  def add_participant
+    @chatroom = Chatroom.find(params[:chatroom_id])
+    @chatroom.chatroom_users.create(user_id: params[:id])
+    redirect_to place_chatroom_path(@chatroom.place, @chatroom)
+  end
+
+  def remove_participant
+    @chatroom = Chatroom.find(params[:chatroom_id])
+    @chatroom.chatroom_users.where(user_id: params[:id]).first.destroy
+    redirect_to place_chatroom_path(@chatroom.place, @chatroom)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_chatroom
@@ -69,7 +94,7 @@ class ChatroomsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def chatroom_params
-      params.require(:chatroom).permit(:name)
-    end
+    # def chatroom_params
+    #   params.require(:chatroom).permit(:place_id)
+    # end
 end

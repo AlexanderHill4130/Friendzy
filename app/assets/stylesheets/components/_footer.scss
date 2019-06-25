@@ -20,7 +20,22 @@
     padding: 0.907rem 1rem;
   }
 
-    i.fa {
+  i.fa-user:before {
+    margin-left: -80px;
+  }
+
+  i.fa-users:before  {
+    margin-left: -100px;
+  }
+  i.fa-map-marker-alt:before {
+    margin-left: -100px;
+  }
+
+  i.fa-comment:before {
+    margin-left: -20px;
+}
+
+  i.fa {
       opacity: 0.8;
       margin-right: rem-calc(10);
       font-size: rem-calc(24);
@@ -33,13 +48,19 @@
     }
   }
 
-  .footer-text {
-    position: relative;
-    text-align: center;
-    top: 2px;
+.card-home {
+     font-size: 36px;
     font-weight: bold;
-    font-size: rem-calc(14);
-    color: $friendzy;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
+//  .footer-text {
+//     position: relative;
+//     text-align: center;
+//     top: 2px;
+//     font-weight: bold;
+//     font-size: rem-calc(14);
+//     color: $friendzy;
+// }
+
 
 
