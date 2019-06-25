@@ -24,6 +24,11 @@
   border-color: white;
 }
 
+.submit-form-button .btn:hover {
+  color: #45728B;
+  border-color: #45728B;
+}
+
 .form-control {
   border-radius: 10px;
   border-top: 1px solid #45728B;
@@ -37,4 +42,14 @@
 .form-control:focus {
   outline: none;
   border-color: #b7e6ff;
+}
+
+.center-form a {
+  text-decoration: underline;
+  color: white;
+}
+
+.center-form a:hover {
+  text-decoration: none;
+  color: #45728B;
 }
