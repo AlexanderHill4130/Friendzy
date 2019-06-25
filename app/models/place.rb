@@ -6,6 +6,7 @@ class Place < ApplicationRecord
   validates :name, presence: true
   validates :category, presence: true
   validates :address, presence: true
+  mount_uploader :photo, PhotoUploader
 
   include PgSearch
   pg_search_scope :search_by_name_and_category_and_address,
