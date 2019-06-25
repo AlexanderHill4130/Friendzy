@@ -1,6 +1,6 @@
 <div class="text-center">
-  <%= cl_image_tag(@friend.photo) %>
-<strong><%=@friend.first_name.upcase %> <%= @friend.last_name.upcase  %></strong>
+  <p><%= cl_image_tag(@friend.photo) %></p>
+  <p><strong><%=@friend.first_name.upcase %> <%= @friend.last_name.upcase  %></strong></p>
 </div>
 
 <% if @friend.interests.any? %>
