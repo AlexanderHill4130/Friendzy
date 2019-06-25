@@ -37,7 +37,7 @@
                 label: false,
                 input_html: { autocomplete: "new-password" },
                 placeholder: 'Confirm Password' %>
-    <%= f.input :photo %>
+    <%= f.input :photo, as: :hidden %>
     <%= f.input :photo_cache, as: :hidden %>
 
   <div class="submit-form-button">
