@@ -1,4 +1,4 @@
-
+require 'faker'
 #Api keys
 
 OPENCAGE_api_key = ENV['OPENCAGE_KEY']
@@ -52,9 +52,11 @@ def search_api(location, query)
                   else
                     r.location.country
                   end,
-        rating: rand(1..5)
+        rating: rand(1..5),
+        description: Faker::Markdown.emphasis
 
     )
+        place.remote_photo_url = "https://source.unsplash.com/800x600/?places"
     place.save!
   end
 end
