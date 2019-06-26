@@ -1,0 +1,45 @@
+boh
+<!-- ORIGINAL CODE THAT WORKS FINE -->
+<!--
+  <strong> <%#= link_to '<', place_path(@chatroom.place.id) %></strong>
+  <div class="navbar navbar-default navbar-fixed-top pt-5">
+  <p>
+    <strong>Name:</strong>
+    <%#= @chatroom.place.name %>
+  </p>
+  </div>
+  <div data-behavior='messages'>
+    <%# @chatroom.messages.each do |message| %>
+    <div><strong><%#= message.user.username_initial%>: </strong>  <%#= message.body %></div>
+    <%# end %>
+  </div>
+
+  <%#= simple_form_for [@chatroom.place, @chatroom, Message.new], remote:true do |f| %>
+    <%#= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
+    <%#= f.button :submit, class: " btn btn-success submit-btn" %>
+  <%# end %>
+
+-->
+ <!-- FRIENDS in CHAT -->
+<!--
+  <div >
+    <li class="list-group-item list-group-item-primary"> Friends in chat:</li>
+     <ul class="list-group" style="height: 250px; overflow: scroll;">
+   <%# @chatroom.users.each do |user| %>
+    <li class="list-group-item d-flex justify-content-between align-items-center"> <%= user.first_name %> <%= user.last_name %>
+      <span class="badge badge-friendzy badge-pill"> <%#= link_to "Remove", place_chatroom_remove_participant_path(@chatroom.place, @chatroom, user.id), method: :delete %> </span>
+    </li>
+  <#% end %>
+    </ul>
+  </div>
+  -->
+ <!-- LIST OF AVAILABLE FRIENDS TO ADD TO THE CHAT -->
+ <!--
+  <div >
+    <li class="list-group-item list-group-item-primary"> List of available friends:</li>
+     <ul class="list-group" style="height: 250px; overflow: scroll;">
+   <#% @chatroom.available_nonparticipants.each do |friend| %>
+    <li class="list-group-item d-flex justify-content-between align-items-center"> <%= friend.first_name %> <%= friend.last_name %>
+      <span class="badge badge-friendzy badge-pill"><%#= link_to "Add", place_chatroom_add_participant_path(@chatroom.place, @chatroom, friend.id) %> </span>
+    </li>
+  <%# end %>
