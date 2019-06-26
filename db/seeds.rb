@@ -31,7 +31,7 @@ puts 'Creating 20 fake users...'
     email: "user@example.com",
     password: "123456")
 
-    u1.remote_photo_url = "http://www.columbiaphotography.co.uk/wp-content/uploads/2018/04/dating-photography-photo.jpg"
+    u1.remote_photo_url = randomuser_api
     u1.save!
 
   20.times do
