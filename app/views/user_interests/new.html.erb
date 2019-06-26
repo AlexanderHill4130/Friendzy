@@ -6,12 +6,14 @@
 
 <!-- ciao -->
   <% if @user.interests.any? %>
-      <em> Current interests: </em>
-      <% @user.interests.each do |int| %>
-        <ul class="list-group list-group-flush">
-          <li  class="list-group-item"><%= int.name %></li>
-        </ul>
-        <% end  %>
+      <p><em> Current interests: </em></p>
+      <div class="interests-styling user-interests">
+        <% @user.interests.each do |int| %>
+          <ul class="list-group list-group-flush">
+            <li  class="list-group-item"><%= int.name %></li>
+          </ul>
+          <% end  %>
+      </div>
 
   <% else %>
 
@@ -24,7 +26,7 @@
 <div class="card form-interest">
 Specify your interests:
 
-  <div class="interests-styling">
+  <div class="interests-styling all-interests">
     <ul class="list-group list-group-flush">
     <%= simple_form_for :interests, url: user_user_interests_path(current_user.id), method: :post do |f| %>
         <li class="list-group-item"> <%= f.input :interest, as: :check_boxes, collection: Interest.all  %></li>
