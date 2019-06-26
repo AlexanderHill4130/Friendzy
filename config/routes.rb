@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "chats", to: "chatrooms#user_chatrooms"
   resources :pages, only: [:show ]
   resources :places, only: :index
-  resources :users, only: [:index] do
+  resources :users, only: [:index, :update] do
      resources :user_interests, only: [:new, :create]
   end
   resources :friendships
