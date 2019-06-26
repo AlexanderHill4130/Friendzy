@@ -17,7 +17,7 @@
       <div class="card m-1 text-center" style="width: 160px;">
         <%= cl_image_tag(place.photo, height: 70, width: 70, crop: :fill, class: 'card-img-top')%>
         <div class="card-body">
-          <h6 class="card-title"><%= truncate(place.name, length:12) %></h6>
+          <h6 class="card-title"><%= place.name %></h6>
           <input type="hidden" <%= place.category %> >
           <input type="hidden"<%= place.address %> >
           <p class="card-text"></p>

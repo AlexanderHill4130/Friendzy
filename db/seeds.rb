@@ -69,7 +69,7 @@ end
 puts 'Finished!'
 
 puts 'Creating 20 real places in Milan...'
-search_api("Milan", "party")
+search_api("Milan", "bar")
 # raw_res.each_with_index do |r, i|
 #   break if i > 19
 #   categories = r.categories.first
