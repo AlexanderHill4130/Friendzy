@@ -2,6 +2,20 @@
   <p><%= cl_image_tag((@friend.photo), class: "profile_photo") %></p>
   <p><strong><%=@friend.first_name.upcase %> <%= @friend.last_name.upcase  %></strong></p>
 </div>
+<div>
+  <%= simple_form_for(@friend, html: { method: :put }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Update" %>
+  </div>
+<% end %>
+</div>
  <!-- OLD CODE FOR SHOWING INTERESTS -->
 <%# if @friend.interests.any? %>
 <!-- <div class="text-center">
