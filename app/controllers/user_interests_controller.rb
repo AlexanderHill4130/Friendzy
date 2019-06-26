@@ -7,7 +7,6 @@ class UserInterestsController < ApplicationController
   end
 
   def create
-
     current_user.interests.destroy_all
     #@user_interest = @user.user_interests.new(user_interest_params)
     array_interest = params["interests"]["interest"]
@@ -19,10 +18,7 @@ class UserInterestsController < ApplicationController
       @user_interest.save
     end
 
-
-
-      redirect_to page_path(@user)
-
+    redirect_to page_path(@user)
   end
 
   def destroy

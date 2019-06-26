@@ -1,20 +1,25 @@
 <div>
 <strong><%= @user.first_name.upcase %> <%= @user.last_name.upcase  %></strong>
 </div>
+
+
+
 <!-- ciao -->
-<% if @user.interests.any? %>
-<em> Interested in: </em>
-<% @user.interests.each do |int| %>
-  <ul>
-    <li><%= int.name %></li>
-  </ul>
-<% end  %>
-<% else %>
+  <% if @user.interests.any? %>
+      <em> Interested in: </em>
+      <% @user.interests.each do |int| %>
+        <ul>
+          <li><%= int.name %></li>
+        </ul>
+        <% end  %>
+
+  <% else %>
 
 <%= @user.first_name %><%= "has not specified any interest yet." %>
+
 <% end %>
 
-<% @user.interests.each do |int| %>
+
 
 <div class="card form-interest">
 Specify your interests:
@@ -32,7 +37,7 @@ Specify your interests:
     <% end %>
 
 
-  <% end %>
+   <!-- <%# end %> -->
   </div>
 </div>
 
