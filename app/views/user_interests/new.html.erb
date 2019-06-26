@@ -10,7 +10,11 @@
   </ul>
 <% end  %>
 <% else %>
+
 <%= @user.first_name %><%= "has not specified any interest yet." %>
+<% end %>
+
+<% @user.interests.each do |int| %>
 
 <div class="card form-interest">
 Specify your interests:
