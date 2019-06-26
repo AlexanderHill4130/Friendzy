@@ -1,15 +1,15 @@
-<div>
-<strong><%= @user.first_name.upcase %> <%= @user.last_name.upcase  %></strong>
-</div>
+<!-- <div>
+<strong><%#= @user.first_name.upcase %> <%= @user.last_name.upcase  %></strong>
+</div> -->
 
 
 
 <!-- ciao -->
   <% if @user.interests.any? %>
-      <em> Interested in: </em>
+      <em> Current interests: </em>
       <% @user.interests.each do |int| %>
-        <ul>
-          <li><%= int.name %></li>
+        <ul class="list-group list-group-flush">
+          <li  class="list-group-item"><%= int.name %></li>
         </ul>
         <% end  %>
 
