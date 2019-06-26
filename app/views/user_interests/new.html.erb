@@ -1,7 +1,7 @@
 <div>
 <strong><%= @user.first_name.upcase %> <%= @user.last_name.upcase  %></strong>
 </div>
-
+<!-- ciao -->
 <% if @user.interests.any? %>
 <em> Interested in: </em>
 <% @user.interests.each do |int| %>
@@ -9,9 +9,8 @@
     <li><%= int.name %></li>
   </ul>
 <% end  %>
-
+<% else %>
 <%= @user.first_name %><%= "has not specified any interest yet." %>
-
 
 <div class="card form-interest">
 Specify your interests:
