@@ -31,17 +31,13 @@
 
 .form-control {
   border-radius: 10px;
-  border-top: 1px solid #45728B;
-  border-left-style: none;
-  border-right-style: none;
-  border-bottom: 1px solid #45728B;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .form-control:focus {
   outline: none;
-  border-color: #b7e6ff;
+
 }
 
 .center-form a {
