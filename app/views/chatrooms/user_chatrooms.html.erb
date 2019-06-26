@@ -1,3 +1,12 @@
+<div >
+<ul class="list-group ">
+<li class="list-group-item align-items-left list-group-item-primary text-white"> <strong> Chats</strong></li>
+
 <% @chatrooms.each do |chatroom| %>
-<p> <%= chatroom.place.name %></p>
+
+  <li class="list-group-item justify-content-start list-group-item-light "><%= link_to place_chatroom_path(chatroom.place, chatroom) do %>
+  <p class="text-secondary"> 💬 <%= chatroom.place.name %></p>
+  <% end %>
+  </li>
 <% end %>
+</div>
