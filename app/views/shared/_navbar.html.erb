@@ -17,6 +17,7 @@
           <% else %>
             <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
+                 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Profile", page_path(current_user), class: "dropdown-item" %>
             <%= link_to "Settings", "#", class: "dropdown-item" %>
