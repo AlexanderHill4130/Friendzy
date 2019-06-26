@@ -1,118 +1,61 @@
-<div class="fluid-container col-sm-10 col-sm-offset-2" style="margin-bottom: 70px;">
+<div class="fluid-container col-sm-10 col-sm-offset-2" style="margin-bottom: 10px;">
   <p id="notice"><%= notice %></p>
-  <%#= #link_to 'Edit', edit_chatroom_path(@chatroom) %> |
-<p>
-    <strong>Name:</strong>
-    <%= @chatroom.place.name %>
-</p>
-<div class="container"><h2><%= @chatroom.place.name %></h2></div>
-<div>
-    <div data-behavior='messages'>
-    <% @chatroom.messages.each do |message| %>
-    <div><strong><%= message.user.username_initial%>: </strong>  <%= message.body %></div>
-    <% end %>
+  <%#= #link_to 'Edit', edit_chatroom_path(@chatroom) %>
+<div class="container"><h3><%= @chatroom.place.name %></h3></div>
+</div>
+
+<div style="margin-left: 10px; margin-right: 10px;">
+  <nav >
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Chat</a>
+      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Friends in chat</a>
+      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Invite friends</a>
     </div>
-
-  <%= simple_form_for [@chatroom.place, @chatroom, Message.new], remote:true do |f| %>
-    <%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
-    <%= f.button :submit, class: " btn btn-success submit-btn" %>
-  <% end %>
-</div>
-<div id="exTab2" class="container">
-<ul class="nav nav-tabs">
-      <li class="active">
-        <a  href="#1" data-toggle="tab">Chat</a>
-      </li>
-      <li><a href="#2" data-toggle="tab">Friends in chat</a>
-      </li>
-      <li><a href="#3" data-toggle="tab">Invite Friends</a>
-      </li>
-    </ul>
-
-      <div class="tab-content ">
-        <div class="tab-pane active" id="1">
-          <h3>Chat</h3>
-
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" style="margin-top: 20px;" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <!-- #chat content -->
+      <div>
+        <div data-behavior='messages'>
+          <% @chatroom.messages.each do |message| %>
+          <div><strong><%= message.user.username_initial%>: </strong>  <%= message.body %></div>
+          <% end %>
         </div>
+        <%= simple_form_for [@chatroom.place, @chatroom, Message.new], remote:true do |f| %>
 
-        <div class="tab-pane" id="2">
-          <h3>Notice the gap between the content and tab after applying a background color</h3>
-          <div >
-            <li class="list-group-item list-group-item-primary"> Friends in chat:</li>
-            <ul class="list-group" style="height: 250px; overflow: scroll;">
-             <% @chatroom.users.each do |user| %>
-             <li class="list-group-item d-flex justify-content-between align-items-center"> <%= user.first_name %> <%= user.last_name %>
-              <span class="badge badge-friendzy badge-pill"> <%= link_to "Remove", place_chatroom_remove_participant_path(@chatroom.place, @chatroom, user.id), method: :delete %> </span>
-            </li>
-            <% end %>
-          </ul>
+        <div class="input-group">
+        <%= f.text_area :body, row: 1, class: "form-control", autofocus: false %>
+          <div class="input-group-append ">
+        <%= f.button :submit, 'send', class: "btn btn-outline-secondary " %>
+        <% end %>
+          </div>
         </div>
       </div>
-        <div class="tab-pane" id="3">
-          <h3>add clearfix to tab-content (see the css)</h3>
-          <div >
-            <li class="list-group-item list-group-item-primary"> List of available friends:</li>
-            <ul class="list-group" style="height: 250px; overflow: scroll;">
-             <% @chatroom.available_nonparticipants.each do |friend| %>
-             <li class="list-group-item d-flex justify-content-between align-items-center"> <%= friend.first_name %> <%= friend.last_name %>
-              <span class="badge badge-friendzy badge-pill"><%= link_to "Add", place_chatroom_add_participant_path(@chatroom.place, @chatroom, friend.id) %> </span>
-            </li>
-            <% end %>
-          </ul>
-        </div>
-        </div>
-      </div>
-</div>
-
-
-
-<!-- ORIGINAL CODE THAT WORKS FINE -->
-<!--
-  <strong> <%#= link_to '<', place_path(@chatroom.place.id) %></strong>
-  <div class="navbar navbar-default navbar-fixed-top pt-5">
-  <p>
-    <strong>Name:</strong>
-    <%#= @chatroom.place.name %>
-  </p>
+    </div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+      <div >
+        <ul class="list-group" style="height: 250px; overflow: scroll;">
+         <% @chatroom.users.each do |user| %>
+         <li class="list-group-item d-flex justify-content-between align-items-center"> <%= user.first_name %> <%= user.last_name %>
+          <span class="badge badge-friendzy badge-pill"> <%= link_to "Remove", place_chatroom_remove_participant_path(@chatroom.place, @chatroom, user.id), method: :delete %> </span>
+        </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
-  <div data-behavior='messages'>
-    <%# @chatroom.messages.each do |message| %>
-    <div><strong><%= message.user.username_initial%>: </strong>  <%= message.body %></div>
-    <%# end %>
-  </div>
-
-  <%#= simple_form_for [@chatroom.place, @chatroom, Message.new], remote:true do |f| %>
-    <%#= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
-    <%#= f.button :submit, class: " btn btn-success submit-btn" %>
-  <%# end %>
-
--->
- <!-- FRIENDS in CHAT -->
-<!--
-  <div >
-    <li class="list-group-item list-group-item-primary"> Friends in chat:</li>
-     <ul class="list-group" style="height: 250px; overflow: scroll;">
-   <%# @chatroom.users.each do |user| %>
-    <li class="list-group-item d-flex justify-content-between align-items-center"> <%= user.first_name %> <%= user.last_name %>
-      <span class="badge badge-friendzy badge-pill"> <%#= link_to "Remove", place_chatroom_remove_participant_path(@chatroom.place, @chatroom, user.id), method: :delete %> </span>
-    </li>
-  <#% end %>
-    </ul>
-  </div>
-  -->
- <!-- LIST OF AVAILABLE FRIENDS TO ADD TO THE CHAT -->
- <!--
-  <div >
-    <li class="list-group-item list-group-item-primary"> List of available friends:</li>
-     <ul class="list-group" style="height: 250px; overflow: scroll;">
-   <#% @chatroom.available_nonparticipants.each do |friend| %>
-    <li class="list-group-item d-flex justify-content-between align-items-center"> <%= friend.first_name %> <%= friend.last_name %>
-      <span class="badge badge-friendzy badge-pill"><%#= link_to "Add", place_chatroom_add_participant_path(@chatroom.place, @chatroom, friend.id) %> </span>
-    </li>
-  <%# end %>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <div >
+      <ul class="list-group" style="height: 500px; overflow: scroll;">
+       <% @chatroom.available_nonparticipants.each do |friend| %>
+       <li class="list-group-item d-flex justify-content-between align-items-center"> <%= friend.first_name %> <%= friend.last_name %>
+        <span class="badge badge-friendzy badge-pill"><%= link_to "Add", place_chatroom_add_participant_path(@chatroom.place, @chatroom, friend.id) %> </span>
+      </li>
+      <% end %>
     </ul>
   </div>
 
 </div>
 
 
+</div>
+</div>
