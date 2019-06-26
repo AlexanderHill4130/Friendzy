@@ -13,9 +13,9 @@
     <% @places.each do |place| %>
     <div class="col-6 px-1 ">
       <%= link_to place_path(place) do %>
-      
+
       <div class="card m-1 text-center" style="width: 160px;">
-        <img class="card-img-top" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" height="70" width="70" alt="Card image cap">
+        <%= cl_image_tag(place.photo, height: 70, width: 70, crop: :fill, class: 'card-img-top')%>
         <div class="card-body">
           <h6 class="card-title"><%= truncate(place.name, length:12) %></h6>
           <input type="hidden" <%= place.category %> >
