@@ -1,13 +1,14 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag('home-logo2.png', alt: 'Home avatar') %>
+    <h3 id="title-friendzy"> <strong> Friendzy</strong></h3>
+    <%#= image_tag('home-logo2.png', alt: 'Home avatar') %>
     <% end %>
 
-    <a class="navbar-friendzy">
+   <!--  <a class="navbar-friendzy">
 
-      <%= image_tag('Friendzy-logo4.png', size: '180x60', alt: 'Friendzy Logo') %>
+      <%#= image_tag('Friendzy-logo4.png', size: '180x60', alt: 'Friendzy Logo') %>
 
-    </a>
+    </a> -->
 
     <div>
         <% if user_signed_in? %>
@@ -17,7 +18,7 @@
           <% else %>
             <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
-                 
+
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Profile", page_path(current_user), class: "dropdown-item" %>
             <%= link_to "Settings", "#", class: "dropdown-item" %>
