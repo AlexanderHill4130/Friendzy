@@ -108,7 +108,7 @@ s
   text-align: center;
 }
 
- SHOW PLACES PAGE
+ // SHOW PLACES PAGE
 .card-show-places-container {
   align-items: center;
   flex-grow: 0;
@@ -273,6 +273,8 @@ s
 
 .card-friend-avatar {
   border-radius: 50%;
+  width: 80px;
+  height: 80px;
 }
 
 .form-control {
