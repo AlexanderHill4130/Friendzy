@@ -32,11 +32,11 @@
   <body>
     <% unless current_page?(root_path) %>
       <%= render 'shared/navbar' %>
-      <div style="height: 90px;"></div>
+      <div style="height: 66px;"></div>
     <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <% if current_user %>
+    <% unless current_page?(root_path) %>
     <%= render 'shared/footer' %>
     <div style="height: 60px; background-color: transparent;"></div>
 
