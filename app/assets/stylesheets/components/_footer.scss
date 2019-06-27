@@ -1,7 +1,7 @@
 .mobile-bottom-bar {
   width: 100%;
   height: 3.778rem;
-  background-color: rgb(131, 146, 146);
+  background-color:#6187f1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,17 +22,21 @@
 
   i.fa-user:before {
     margin-left: -80px;
+
   }
 
   i.fa-users:before  {
     margin-left: -100px;
+
   }
   i.fa-map-marker-alt:before {
     margin-left: -100px;
+
   }
 
   i.fa-comment:before {
     margin-left: -119px;
+
 }
 
   i.fa {
