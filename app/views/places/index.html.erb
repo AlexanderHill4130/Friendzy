@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="container-places">
-  <div class="row d-flex justify-content-center align-bottom pl-3">
+  <div class="row d-flex justify-content-center align-bottom">
     <% @places.each do |place| %>
     <div>
       <%= link_to place_path(place) do %>
@@ -26,3 +26,4 @@
     </div>
     <% end %>
   </div>   <!-- container-places end -->
+</div>
