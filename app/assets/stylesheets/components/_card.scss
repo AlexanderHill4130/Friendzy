@@ -9,6 +9,10 @@
   padding-top: 20px;
 }
 
+.card-img-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .card-event {
   width: 150px;
   height: 150px;
@@ -31,7 +35,7 @@
   //    padding-bottom: 20px;
   //  }
 }
-
+s
 .card-event .card-event-infos {
   padding: 10px 15px;
 
@@ -51,7 +55,7 @@
   margin-top: 10px;
 
 }
-.card-event-header h6 {
+.card-event-header p {
   font-size: 13px;
   margin-bottom: 3px;
 }
@@ -104,7 +108,7 @@
   text-align: center;
 }
 
-//  SHOW PLACES PAGE
+ SHOW PLACES PAGE
 .card-show-places-container {
   align-items: center;
   flex-grow: 0;
@@ -155,12 +159,48 @@
 }
 
 
+//  cards for place
+.card-place{
+  height: 400px;
+  // background: #d3d3d3;
+  background: #f4f4f4;
+  z-index: 0;
+
+}
+.card-place-infos {
+  padding-top: 30px;
+  background: white;
+  margin: 30px 22px 0 3px;
+  height: 350px;
+  width: 80%;
+  text-align: center;
+  border-radius: 5%;
+}
+
+.card-button-pos {
+  margin-top: 145px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* MEDIA QUERIES */
 // Actually not using this as demo is for mobiles.
 @media (min-width: 1281px) {
 .container-places {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
