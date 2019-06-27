@@ -18,7 +18,7 @@
 <%#= link_to "Invite Friends", place_chatrooms_path(@place), method: :post %>
 
 <div class="card" pt-0>
-  <%= cl_image_tag(@place.photo, :transformation=>[
+  <%= cl_image_tag(@place.photo, transformation: [
   {:width=>400, :height=>250, :gravity=>"south", :crop=>"fill"}]) %>
   <div class="card-img-overlay">
     <h5 class="card-title text-white"> <strong> <%= link_to "<", root_path, {:style=>'color:#FFFFFF;'} %></strong> </h5>
