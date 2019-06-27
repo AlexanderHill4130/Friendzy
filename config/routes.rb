@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'places#index'
+  root to: 'pages#home'
 
   get "chats", to: "chatrooms#user_chatrooms"
-  resources :pages, only: [:show ]
+  resources :pages, only: [:home, :show ]
   resources :places, only: :index
   resources :users, only: [:index, :update] do
      resources :user_interests, only: [:new, :create]
