@@ -20,7 +20,6 @@
     <meta property="og:image" content="<%= meta_image %>" />
     <meta property="og:description" content="<%= meta_description %>" />
     <meta property="og:site_name" content="<%= meta_title %>" />
-
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
@@ -31,15 +30,14 @@
   </head>
   <body>
     <% unless current_page?(root_path) %>
-      <%= render 'shared/navbar' %>
-      <div style="height: 66px;"></div>
+    <%= render 'shared/navbar' %>
+    <div style="height: 66px;"></div>
     <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <% unless current_page?(root_path) %>
     <%= render 'shared/footer' %>
     <div style="height: 60px; background-color: transparent;"></div>
-
     <% end %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

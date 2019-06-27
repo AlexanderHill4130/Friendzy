@@ -94,7 +94,7 @@ puts 'Finished!'
       #   place.save!
       # end
 #puts 'Finished!'
-puts "CReating place 1"
+puts "Creating place 1"
 place1 = Place.new(
         name: "Hotel Magenta",
         category: "Hotel",
@@ -106,7 +106,7 @@ place1 = Place.new(
 place1.remote_photo_url = "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
 place1.save!
 
-puts "CReating place 2"
+puts "Creating place 2"
 place2 = Place.new(
         name: "Caffè Napoli",
         category: "Cafe",
@@ -118,7 +118,7 @@ place2 = Place.new(
 place2.remote_photo_url = "https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
 place2.save!
 
-puts "CReating place 3"
+puts "Creating place 3"
 place3 = Place.new(
         name: "Piscina Swim",
         category: "Pool",
@@ -130,7 +130,7 @@ place3 = Place.new(
 place3.remote_photo_url = "https://images.unsplash.com/photo-1505847610351-22b86a1afd66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
 place3.save!
 
-puts "CReating place 4"
+puts "Creating place 4"
 place4 = Place.new(
         name: "Spritz Aperitivo",
         category: "Bar",
@@ -142,7 +142,7 @@ place4 = Place.new(
 place4.remote_photo_url = "https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=749&q=80"
 place4.save!
 
-puts "CReating place 5"
+puts "Creating place 5"
 place5 = Place.new(
         name: "Cocktail Bar",
         category: "Bar",

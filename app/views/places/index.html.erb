@@ -1,29 +1,26 @@
 <%= form_tag places_path, method: :get, class: "search-form" do %>
 <%= text_field_tag :query,
-  params[:query],
-  class: "form-control search-form-flexgrow",
-  placeholder: "Find a place to hang out" %>
+params[:query],
+class: "form-control search-form-flexgrow",
+placeholder: "Find a place to hang out" %>
 <%= button_tag(type: "submit", class: "btn btn-friendzy-search mr-4") do %>
 <i class="fas fa-search"></i>
 <% end %>
 <% end %>
-
 <div class="container-places">
   <div class="row d-flex justify-content-center align-bottom">
     <% @places.each do |place| %>
     <div>
       <%= link_to place_path(place) do %>
-
       <div class="card text-white">
         <%= cl_image_tag(place.photo, height: 200, width: 80, class: 'card-img')%>
         <div class="card-img-overlay d-flex flex-column justify-content-end">
           <h5 class="card-title font-weight-bold mb-0"><%= place.name %></h5>
           <p class="card-text font-weight-lighter"> <%= place.address %></p>
-
         </div>
       </div>
       <% end %>
     </div>
     <% end %>
-  </div>   <!-- container-places end -->
-</div>
+    </div>   <!-- container-places end -->
+  </div>
