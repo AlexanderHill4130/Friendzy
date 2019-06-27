@@ -8,11 +8,10 @@
 
   <div class="form-inputs">
     <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+  <div class="form-actions btn-friendzy text-center btn-padding-update">
+    <%= f.button :submit, "Save Profile", class: "text-white" %>
   </div>
 <% end %>
 </div>
@@ -49,7 +48,7 @@
       </ul>
       <% end %>
        <div >
-        <%= link_to "Add an interest",new_user_user_interest_path(current_user), :class => "btn btn-outline-primary"  %>
+        <%= link_to "Add an interest",new_user_user_interest_path(current_user), :class => "btn btn-friendzy text-center btn-padding-interest text-white"  %>
        </div>
     <% else %>
         <em>You don't have interests yet.</em>
