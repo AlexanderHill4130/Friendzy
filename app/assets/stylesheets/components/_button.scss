@@ -1,22 +1,26 @@
+
+//  orange button:
 .btn-friendzy {
   background-color: #FF9B00;
   color: white;
+  font-style: bold;
   padding: 0;
   margin-right: 13px;
   margin-left: 5px;
-  width: 85px;
-  height: 40px;
-  border-radius: 8px;
+  width: 140px;
+  height: 50px;
+  border-radius: 30px;
 }
 
 .btn-friendzy:hover {
   background-color: white;
-  border: 1px solid #0BB9BB;
+  border: 1px solid #FF9B00;
   color: black;
 }
 
 .btn-outline-friendzy {
-  border-color: #0BB9BB;
+  // blue
+  border-color: #FF9B00;
   background: white;
   color: $friendzy;
   width: 85px;
@@ -24,12 +28,15 @@
   border-radius: 8px;
 }
 
-.btn-outline-ladle:hover {
-  background: #0BB9BB;
-  color: white;
+
+.btn-padding-show {
+  padding-top: 0.75rem;
 }
 
 .btn-rounding {
   border-radius: 3px;
 }
 
+.btn-rounding-pill {
+  border-radius: 15px;
+}

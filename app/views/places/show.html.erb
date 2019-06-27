@@ -17,19 +17,28 @@
 
 <%#= link_to "Invite Friends", place_chatrooms_path(@place), method: :post %>
 
-<div class="card" style="">
+<div class="card" pt-0>
   <%= cl_image_tag(@place.photo, :transformation=>[
   {:width=>400, :height=>250, :gravity=>"south", :crop=>"fill"}]) %>
   <div class="card-img-overlay">
     <h5 class="card-title text-white"> <strong> <%= link_to "<", root_path, {:style=>'color:#FFFFFF;'} %></strong> </h5>
   </div>
-  <div class="card-body">
-    <h5 class="card-title"><em><%= @place.name %></em></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><em><%= @place.category %></em></h6>
-    <p class="card-text"><%= @place.description %></p>
-  </div>
 
-</div>
-<div class="btn btn-outline-primary w-100">
-<%= link_to "Let's go here!", place_chatrooms_path(@place), method: :post %>
-</div>
+  <!-- <div class="card-body mx-5"> -->
+  <!-- <div class="card-place"> -->
+  <div class=" card-place row d-flex justify-content-center align-bottom pl-3">
+    <div class="card-place-infos">
+      <h5 class="card-title"><em><%= @place.name %></em></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><em><%= @place.category %></em></h6>
+      <p class="card-text"><%= @place.description %></p>
+
+  <div class="text-center card-button-pos">
+    <div class="btn btn-friendzy btn-padding-show">
+    <%= link_to "Go here!", place_chatrooms_path(@place), method: :post, class: 'text-white font-weight-bold'  %>
+    </div>
+  </div>
+    </div>
+
+
+</div>  <!-- class card place-->
+</div>  <!-- class card end-->
