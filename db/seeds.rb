@@ -94,61 +94,62 @@ puts 'Finished!'
       #   place.save!
       # end
 #puts 'Finished!'
-puts "CReating place 1"
+puts "Creating place 1"
 place1 = Place.new(
         name: "Hotel Magenta",
         category: "Hotel",
         address:  "Corso Magenta, 52",
         rating: rand(1..5),
-        description: Faker::Lorem.paragraphs
+        description: Faker::Lorem.paragraphs.join()
+        # description: Faker::Lorem.paragraphs
 
     )
 place1.remote_photo_url = "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
 place1.save!
 
-puts "CReating place 2"
+puts "Creating place 2"
 place2 = Place.new(
         name: "Caffè Napoli",
         category: "Cafe",
         address:  "Piazza Cadorna, 1",
         rating: rand(1..5),
-        description: Faker::Lorem.paragraphs
+        description: Faker::Lorem.paragraphs.join()
 
     )
 place2.remote_photo_url = "https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
 place2.save!
 
-puts "CReating place 3"
+puts "Creating place 3"
 place3 = Place.new(
         name: "Piscina Swim",
         category: "Pool",
         address:  "Corso Como, 34",
         rating: rand(1..5),
-        description: Faker::Lorem.paragraphs
+        description: Faker::Lorem.paragraphs.join()
 
     )
 place3.remote_photo_url = "https://images.unsplash.com/photo-1505847610351-22b86a1afd66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
 place3.save!
 
-puts "CReating place 4"
+puts "Creating place 4"
 place4 = Place.new(
         name: "Spritz Aperitivo",
         category: "Bar",
         address:  "Naviglio grande, 2",
         rating: rand(1..5),
-        description: Faker::Lorem.paragraphs
+        description: Faker::Lorem.paragraphs.join()
 
     )
 place4.remote_photo_url = "https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=749&q=80"
 place4.save!
 
-puts "CReating place 5"
+puts "Creating place 5"
 place5 = Place.new(
         name: "Cocktail Bar",
         category: "Bar",
         address:  "Colonne di S.Lorenzo",
         rating: rand(1..5),
-        description: Faker::Lorem.paragraphs
+        description: Faker::Lorem.paragraphs.join()
 
     )
 place5.remote_photo_url = "https://images.unsplash.com/photo-1497644083578-611b798c60f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
