@@ -37,19 +37,10 @@
       <div >
         <ul class="list-group" style="height: 250px; overflow: scroll;">
          <% @chatroom.users.each do |user| %>
-        <div class="notification">
-          <%= cl_image_tag(user.photo, class:'avatar-large') %>
-          <div class="notification-content">
-            <p><%= user.first_name %> <%= user.last_name %></p>
-          </div>
-          <div class="notification-actions">
-            <%= link_to place_chatroom_remove_participant_path(@chatroom.place, @chatroom, user.id), method: :delete do%>
-            <i class="fas fa-user-times"></i>
-            <% end %>
-          </div>
-      </div>
-      <% end %>
-
+         <li class="list-group-item d-flex justify-content-between align-items-center"> <%= user.first_name %> <%= user.last_name %>
+          <span class="badge badge-friendzy badge-pill"> <%= link_to "Remove", place_chatroom_remove_participant_path(@chatroom.place, @chatroom, user.id), method: :delete %> </span>
+        </li>
+        <% end %>
       </ul>
     </div>
   </div>
@@ -57,20 +48,10 @@
     <div >
       <ul class="list-group" style="height: 500px; overflow: scroll;">
        <% @chatroom.available_nonparticipants.each do |friend| %>
-      <div class="notification">
-        <%= cl_image_tag(friend.photo, class:'avatar-large') %>
-        <div class="notification-content">
-          <p><%= friend.first_name %> <%= friend.last_name %></p>
-        </div>
-        <div class="notification-actions">
-          <%= link_to place_chatroom_add_participant_path(@chatroom.place, @chatroom, friend.id) do%>
-          <i class="fas fa-user-plus"></i>
-          <% end %>
-        </div>
-      </div>
+       <li class="list-group-item d-flex justify-content-between align-items-center"> <%= friend.first_name %> <%= friend.last_name %>
+        <span class="badge badge-friendzy badge-pill"><%= link_to "Add", place_chatroom_add_participant_path(@chatroom.place, @chatroom, friend.id) %> </span>
+      </li>
       <% end %>
-
-
     </ul>
   </div>
 
