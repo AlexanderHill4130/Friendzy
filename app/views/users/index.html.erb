@@ -10,7 +10,6 @@
 <div class="container">
     <div class="row">
       <!-- <div id="friends"> -->
-
           <% if params[:query].present? %>
             <% sql_query = "first_name ILIKE :query OR last_name ILIKE :query" %>
             <% @users = User.where(sql_query, query: "%#{params[:query]}%") %>
@@ -19,6 +18,7 @@
             <% @users = User.all %>
             <%= render @users %>
           <% end %>
+
 
   </div>
 </div>
