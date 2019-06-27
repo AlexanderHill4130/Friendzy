@@ -12,12 +12,6 @@
   border-radius: 30px;
 }
 
-.btn-friendzy:hover {
-  background-color: white;
-  border: 1px solid #FF9B00;
-  color: black;
-}
-
 .btn-outline-friendzy {
   // blue
   border-color: #FF9B00;
@@ -31,6 +25,14 @@
 
 .btn-padding-show {
   padding-top: 0.75rem;
+}
+
+.btn-padding-update {
+  padding-top: 0.4rem;
+}
+
+.btn-padding-interest {
+  padding-top: 0.9rem;
 }
 
 .btn-rounding {

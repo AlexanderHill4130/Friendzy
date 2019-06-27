@@ -35,7 +35,7 @@
   //    padding-bottom: 20px;
   //  }
 }
-s
+
 .card-event .card-event-infos {
   padding: 10px 15px;
 
@@ -181,21 +181,6 @@ s
   margin-top: 145px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* MEDIA QUERIES */
 // Actually not using this as demo is for mobiles.
 @media (min-width: 1281px) {
@@ -238,10 +223,11 @@ s
 // friends card
 
 .card-friend {
-  padding: 15px;
+  width: 70px;
+  padding: 25px;
   border-radius: 5px;
   text-align: center;
-  margin: 10px 0;
+  margin: 10px 0px;
   a {
     color: black;
   }
@@ -274,11 +260,17 @@ s
 
 .card-friend-avatar {
   border-radius: 50%;
-  width: 110px;
-  height: 110px;
+  width: 80px;
+  height: 80px;
 }
 
 .form-control {
   width: 70%;
   margin: 0 auto;
+}
+
+
+.friends-card {
+  width: 150px;
+  border: 1px solid black;
 }
