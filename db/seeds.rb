@@ -100,7 +100,8 @@ place1 = Place.new(
         category: "Hotel",
         address:  "Corso Magenta, 52",
         rating: rand(1..5),
-        description: Faker::Lorem.paragraphs
+        description: Faker::Lorem.paragraphs.join()
+        # description: Faker::Lorem.paragraphs
 
     )
 place1.remote_photo_url = "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
@@ -112,7 +113,7 @@ place2 = Place.new(
         category: "Cafe",
         address:  "Piazza Cadorna, 1",
         rating: rand(1..5),
-        description: Faker::Lorem.paragraphs
+        description: Faker::Lorem.paragraphs.join()
 
     )
 place2.remote_photo_url = "https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
@@ -124,7 +125,7 @@ place3 = Place.new(
         category: "Pool",
         address:  "Corso Como, 34",
         rating: rand(1..5),
-        description: Faker::Lorem.paragraphs
+        description: Faker::Lorem.paragraphs.join()
 
     )
 place3.remote_photo_url = "https://images.unsplash.com/photo-1505847610351-22b86a1afd66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
@@ -136,7 +137,7 @@ place4 = Place.new(
         category: "Bar",
         address:  "Naviglio grande, 2",
         rating: rand(1..5),
-        description: Faker::Lorem.paragraphs
+        description: Faker::Lorem.paragraphs.join()
 
     )
 place4.remote_photo_url = "https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=749&q=80"
@@ -148,7 +149,7 @@ place5 = Place.new(
         category: "Bar",
         address:  "Colonne di S.Lorenzo",
         rating: rand(1..5),
-        description: Faker::Lorem.paragraphs
+        description: Faker::Lorem.paragraphs.join()
 
     )
 place5.remote_photo_url = "https://images.unsplash.com/photo-1497644083578-611b798c60f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
