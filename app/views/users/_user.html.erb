@@ -1,9 +1,10 @@
+<!-- <div class="col-6 col-md-4 card-friend"> -->
 <div class="col-6 col-md-4 card-friend">
-  <div>
+  <div class="card-friend-bg">
     <%= cl_image_tag(user.photo, height: 50, width: 50, crop: :fill, class: 'card-friend-avatar')%>
-  </div>
-  <div class="card-friend-name">
 
-    <p><%= link_to "#{user.first_name} #{user.last_name}", page_path(user.id) %></p>
+    <div class="card-friend-name">
+      <p><%= link_to "#{user.first_name} #{user.last_name[0]}", page_path(user.id) %></p>
+    </div>
   </div>
 </div>

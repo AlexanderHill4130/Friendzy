@@ -35,7 +35,7 @@
   //    padding-bottom: 20px;
   //  }
 }
-s
+
 .card-event .card-event-infos {
   padding: 10px 15px;
 
@@ -108,7 +108,7 @@ s
   text-align: center;
 }
 
- SHOW PLACES PAGE
+ // SHOW PLACES PAGE
 .card-show-places-container {
   align-items: center;
   flex-grow: 0;
@@ -184,18 +184,6 @@ s
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* MEDIA QUERIES */
 // Actually not using this as demo is for mobiles.
 @media (min-width: 1281px) {
@@ -238,18 +226,36 @@ s
 // friends card
 
 .card-friend {
-  width: 70px;
-  padding: 25px;
+  width: 130px;
+  padding: 13px;
   border-radius: 5px;
   text-align: center;
-  margin: 10px 0px;
+  margin: 2px 0px 2px 0px ;
   a {
     color: black;
   }
   p {
     margin: 0;
   }
+}
 
+.card-friend-bg {
+  background: white;
+  width: 140px;
+  height: 140px;
+  padding-top: 10px;
+  margin: 0;
+  border-radius: 15px;
+}
+
+.card-friend-name {
+  padding-top: 10px;
+  font-family: 'Karla', Helvetica, sans-serif;
+}
+
+.users-container{
+  //  used on row div
+  padding: 0 25px;
 }
 
 .img-circle {
@@ -275,8 +281,8 @@ s
 
 .card-friend-avatar {
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
 }
 
 .form-control {
