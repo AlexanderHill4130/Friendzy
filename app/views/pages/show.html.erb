@@ -2,17 +2,7 @@
   <p><%= cl_image_tag((@friend.photo), class: "profile_photo") %></p>
   <p><strong><%=@friend.first_name.upcase %> <%= @friend.last_name.upcase  %></strong></p>
 </div>
-<div>
-  <%= simple_form_for(@friend, html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-  <div class="form-inputs">
-    <%= f.input :photo %>
-  </div>
-  <div class="form-actions btn-friendzy text-center btn-padding-update">
-    <%= f.button :submit, "Save Profile", class: "text-white" %>
-  </div>
-  <% end %>
-</div>
+
 <!-- OLD CODE FOR SHOWING INTERESTS -->
 <%# if @friend.interests.any? %>
 <!-- <div class="text-center">
@@ -83,3 +73,15 @@
   <%= @friend.first_name %> has not specified availabilities yet.
 </div>
 <% end %>
+<div>
+  <%= simple_form_for(@friend, html: { method: :put }) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs ">
+    <%= f.input :photo %>
+  </div>
+  <div class="form-actions btn-friendzy text-center btn-padding-update ">
+    <%= f.button :submit, "Save Profile", class: "text-white"%>
+
+  </div>
+  <% end %>
+</div>
