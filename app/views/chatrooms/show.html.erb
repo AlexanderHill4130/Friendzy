@@ -16,7 +16,7 @@
       <!-- #chat content -->
       <div data-behavior='messages'>
         <% @chatroom.messages.each do |message| %>
-        <div class="pt-2 message-container darker">
+        <div class="<%= user_chat_class(message) %> pt-2 message-container" >
           <%= cl_image_tag message.user.photo, class: "avatar" %> <%= message.body %>
         </div>
         <% end %>

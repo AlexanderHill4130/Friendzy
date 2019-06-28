@@ -45,6 +45,11 @@
   color: red
 }
 
+.messages {
+  display: flex;
+  flex-direction: column;
+}
+
 .message-composer {
   position: fixed;
   bottom: 70px;
@@ -52,12 +57,17 @@
   width: 350px;
 }
 .message-container {
-  border: 2px solid #dedede;
-  background-color: #f1f1f1;
-  border-radius: 5px;
+  background-color: #f3ab5a;
+  border-radius: 50px;
   padding: 10px;
   margin: 10px 0;
+  width: 80vw;
+  color: white;
 }
-
+.user-message {
+  background-color: #808bda;
+  position: relative;
+  left: 15vw;
+}
 
 
