@@ -96,63 +96,63 @@ puts 'Finished!'
 #puts 'Finished!'
 puts "Creating place 1"
 place1 = Place.new(
-        name: "Hotel Magenta",
-        category: "Hotel",
-        address:  "Corso Magenta, 52",
+        name: "Cioccolatitaliani",
+        category: "Coffee",
+        address:  "Piazzale Luigi Cadorna, 10",
         rating: rand(1..5),
-        description: Faker::Lorem.paragraphs.join()
+        description: "Founded in 2009 by the Ferrieri family. The best chocolate in the world with ice cream, pastry, coffee shop and kitchen.",
         # description: Faker::Lorem.paragraphs
 
     )
-place1.remote_photo_url = "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+place1.remote_photo_url = "https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
 place1.save!
 
 puts "Creating place 2"
 place2 = Place.new(
-        name: "Caffè Napoli",
-        category: "Cafe",
-        address:  "Piazza Cadorna, 1",
+        name: "Cantina Carducci",
+        category: "Wine Bar",
+        address:  "Via Giosuè Carducci, 9",
         rating: rand(1..5),
-        description: Faker::Lorem.paragraphs.join()
+        description: "Wine bar in the historic center. A place to relax sipping good wine or a cocktail paired with refined snacks.",
 
     )
-place2.remote_photo_url = "https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+place2.remote_photo_url = "https://images.unsplash.com/photo-1550082495-5748ac6655c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
 place2.save!
 
 puts "Creating place 3"
 place3 = Place.new(
-        name: "Piscina Swim",
-        category: "Pool",
-        address:  "Corso Como, 34",
+        name: "Le Wagon Demo Day - Batch 263",
+        category: "Coding",
+        address:  "Via Massimo D'Azeglio, 3",
         rating: rand(1..5),
-        description: Faker::Lorem.paragraphs.join()
+        description: "Friday, June 28th, at 7:00 pm, at Milan LUISS Hub for makers and students, our students will show the result of their journey with Le Wagon.",
 
     )
-place3.remote_photo_url = "https://images.unsplash.com/photo-1505847610351-22b86a1afd66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+place3.remote_photo_url = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/2/lewagon-2.jpg"
 place3.save!
 
 puts "Creating place 4"
 place4 = Place.new(
-        name: "Spritz Aperitivo",
-        category: "Bar",
-        address:  "Naviglio grande, 2",
+        name: "Cecco Ristorante Pizzeria",
+        category: "Restaurant",
+        address:  "Via Vincenzo Monti, 34",
         rating: rand(1..5),
-        description: Faker::Lorem.paragraphs.join()
+        description: "The Cecco Restaurant Pizzeria stands out for the quality of its cuisine, gaining the esteem and trust of a vast Milanese clientele and more.",
 
     )
-place4.remote_photo_url = "https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=749&q=80"
+place4.remote_photo_url = "https://www.dacecco.com/wp-content/uploads/2019/03/DaCecco3.jpg"
 place4.save!
 
 puts "Creating place 5"
 place5 = Place.new(
-        name: "Cocktail Bar",
-        category: "Bar",
-        address:  "Colonne di S.Lorenzo",
+        name: "The Space Cinema",
+        category: "Cinema",
+        address:  "Via Santa Radegonda, 8",
         rating: rand(1..5),
-        description: Faker::Lorem.paragraphs.join()
+        description: "Cinema offering 10-12 theatres including an IMAX . Served by a huge parking and has bars to take drinks, snacks, ice creams and pop corns.",
 
     )
-place5.remote_photo_url = "https://images.unsplash.com/photo-1497644083578-611b798c60f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+place5.remote_photo_url = "https://zero-media.s3.amazonaws.com/uploads/2015/05/The-Space-Cinema-Odeon-Cinema-Cultura-Milano-Film.jpg"
 place5.save!
 
 puts 'Creating 20 fake place_categories...'

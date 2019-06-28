@@ -15,7 +15,7 @@
     <%= cl_image_tag(@place.photo, transformation: [
     {:width=>400, :height=>250, :gravity=>"south", :crop=>"fill"}]) %>
     <div class="card-img-overlay">
-      <h5 class="card-title text-white"> <strong> <%= link_to "<", root_path, {:style=>'color:#FFFFFF;'} %></strong> </h5>
+      <h5 class="card-title text-white"> <strong> <%= link_to "<", places_path, {:style=>'color:#FFFFFF;'} %></strong> </h5>
     </div>
     <!-- <div class="card-body mx-5"> -->
     <!-- <div class="card-place"> -->
